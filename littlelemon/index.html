@@ -4,6 +4,9 @@
 <head>
     <title>Little Lemon</title>
 
+    <!-- Credits for recipes: https://www.themediterraneandish.com/best-mediterranean-recipes-of-2018/ -->
+    <!-- Images from Image Creator: https://www.bing.com/create -->
+
     <!-- Include meta tags for SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,21 +29,32 @@
 </head>
 
 <body>
+    <!-- Using flex to group logo and nav bar together -->
     <div class="header">
         <header>
             <img src="assets/Asset 16@4x.png" alt="Footer Logo">
         </header>
         <nav>
             <ul>
-                <a href="#"><li>Home</li></a>
-                <a href="#menu"><li>Menu</li></a>
-                <a href="#about"><li>About</li></a>
-                <a href="#contact"><li>Contact</li></a>
+                <a href="#">
+                    <li>Home</li>
+                </a>
+                <a href="#menu">
+                    <li>Menu</li>
+                </a>
+                <a href="#about">
+                    <li>About</li>
+                </a>
+                <a href="#contact">
+                    <li>Contact</li>
+                </a>
             </ul>
         </nav>
     </div>
 
     <main class="main">
+        <!-- Separate each part into sections, and each item into articles -->
+        <!-- Avoid using div as much as possible, and try to use semantic HTML elements -->
         <section class="promotion">
             <a href="#">
                 <img src="assets/promotion.png" alt="Promotion: Get a free lemon with every order over $10!">
@@ -225,7 +239,7 @@
                 <p>Saturday - Sunday: 12pm - 10pm</p>
             </div>
         </section>
-        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <button onclick="topFunction()" id="btnTop" title="Go to top">Top</button>
     </main>
 
     <footer class="footer">
@@ -237,11 +251,9 @@
         </div>
     </footer>
 
+    <!-- Add Javascript to handle back to top button -->
     <script>
-        // Get the button
-        let mybutton = document.getElementById("myBtn");
-
-        // When the user scrolls down 20px from the top of the document, show the button
+        let mybutton = document.getElementById("btnTop");
         window.onscroll = function () { scrollFunction() };
 
         function scrollFunction() {
@@ -252,7 +264,6 @@
             }
         }
 
-        // When the user clicks on the button, scroll to the top of the document
         function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;

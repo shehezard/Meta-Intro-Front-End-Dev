@@ -242,7 +242,7 @@ footer>div {
 }
 
 
-#myBtn {
+#btnTop {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -261,7 +261,7 @@ footer>div {
     scale: 1;
 }
 
-#myBtn:hover {
+#btnTop:hover {
     background-color: antiquewhite;
     border: 1px solid cadetblue;
     color: #333333;
