@@ -1,3 +1,29 @@
+/* 
+CSS layout, styling and effects
+
+When viewing the home page in the browser:
+
+    Is the use of CSS styling effective?
+    I have added a rustic color palette with transition animations and soft edges to create a warm and welcoming atmosphere.
+
+    Is CSS used to create appropriate interactivity?
+    I have used CSS to create hover effects on the navigation bar and the menu items. I have also used CSS to create a smooth scroll effect when clicking on the navigation bar.
+
+When opening the CSS file in VS code, ask yourself the following:
+
+    Is it a grid or flexbox layout?
+    I have used a grid layout for the header.
+    I have used a flexbox layout for the navigation bar, the menu items, the contact information and the footer.
+
+    Does it have the appropriate selectors to style elements?
+    I have used the appropriate selectors to style the elements.
+
+    Does it specify any pseudo-classes to create interactivity on the home page?
+    I have used pseudo-classes to create hover effects on the navigation bar and the menu items.
+
+    Are any animations or transition effects used? Do they improve the user experience or distract from it?
+    I have used transition effects on the hover effects to create a smooth transition. I have also used a shake animation on the promotion image to draw attention to it.
+ */
 html {
     scroll-behavior: smooth;
 }
