@@ -7,14 +7,15 @@
     <!-- Include meta tags for SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.">
+    <meta name="description"
+        content="Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.">
     <meta name="author" content="Little Lemon">
-    <meta name="robots" content="index, follow" />
-    
+
     <!-- Include meta tags for social media -->
     <meta name="og:title" content="Little Lemon">
     <meta name="og:type" content="website">
-    <meta name="og:description" content="Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.">
+    <meta name="og:description"
+        content="Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.">
     <meta name="og:image" content="https://littlelemon.com/images/lemon.png">
     <meta name="og:url" content="https://www.littlelemon.com">
     <meta name="og:site_name" content="Little Lemon">
@@ -25,26 +26,236 @@
 
 <body>
     <header>
-        <h1>Little Lemon</h1>
+        <img src="assets/Asset 16@4x.png" alt="Footer Logo">
     </header>
 
     <nav>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <main>
-        <h2>About</h2>
-        <p>This is a brief description of my website.</p>
+        <section class="promotion">
+            <a href="#">
+                <img src="assets/promotion.png" alt="Promotion: Get a free lemon with every order over $10!">
+            </a>
+        </section>
+        <section class="info">
+            <article class="card">
+                <img src="assets/shakshuka.jpeg" alt="Shakshuka">
+                <div class="description">
+                    <h4><b>Shakshuka</b></h4>
+                    <p>A classic North African dish hailing from Tunisia, shakshuka is simple sunny side up eggs
+                        braised in a chunky tomato sauce with bell peppers and onions.</p>
+                </div>
+            </article>
+            <article class="card">
+                <img src="assets/bakedcodlemongarlic.jpeg" alt="Green Goddess Chicken Thighs">
+                <div class="description">
+                    <h4><b>Baked Lemon Garlic Cod</b></h4>
+                    <p>This baked fish recipe has been a fan favorite for a long time! It's ready in just over 15
+                        minutes and it's all about the garlic and lemon sauce. Made in a skillet, the secret is in the
+                        white fish fillet.</p>
+                </div>
+            </article>
+            <article class="card">
+                <img src="assets/falafelbowls.jpeg" alt="Falafel Bowls">
+                <div class="description">
+                    <h4><b>Falafel Bowls</b></h4>
+                    <p>The perfect Mediterranean twist, made the traditional way. With your favorite hummus dip and a
+                        salad. And to jazz it up even more, some pickles and olives too!</p>
+                </div>
+            </article>
+        </section>
+        <section class="menu" id="menu">
+            <article class="description">
+                <h2>Menu</h2>
+                <p>Our menu is inspired by the Mediterranean diet, and features a variety of dishes from the region.
+                    We are proud to offer a wide selection of vegetarian and vegan options, as well as gluten-free
+                    options.</p>
+            </article>
+            <article class="list">
+                <div class="item">
+                    <h4 class="label">Shakshuka</h4>
+                    <b>$10</b>
+                    <p class="ingredients">
+                        Eggs, tomato sauce, bell peppers and onions
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Baked Lemon Garlic Cod</h4>
+                    <b>$15</b>
+                    <p class="ingredients">
+                        Cod, garlic, lemon, olive oil
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Falafel Bowls</h4>
+                    <b>$12</b>
+                    <p class="ingredients">
+                        Falafel, hummus, salad, pickles, olives
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Green Goddess Chicken Thighs</h4>
+                    <b>$15</b>
+                    <p class="ingredients">
+                        Chicken thighs, garlic, lemon, olive oil
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Greek Lamb Kleftiko</h4>
+                    <b>$20</b>
+                    <p class="ingredients">
+                        Lamb, garlic, lemon, olive oil
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Turmeric Lemon Chicken Soup</h4>
+                    <b>$10</b>
+                    <p class="ingredients">
+                        Chicken, turmeric, lemon, olive oil
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Greek-Style Roasted Branzino</h4>
+                    <b>$20</b>
+                    <p class="ingredients">
+                        Branzino, garlic, lemon, olive oil
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Moroccan Chicken</h4>
+                    <b>$15</b>
+                    <p class="ingredients">
+                        Chicken, garlic, lemon, olive oil
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Döner Kebab</h4>
+                    <b>$10</b>
+                    <p class="ingredients">
+                        Beef, garlic, lemon, olive oil
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Mediterranean Cucumber and Tomato Salad</h4>
+                    <b>$5</b>
+                    <p class="ingredients">
+                        Cucumber, tomato, olive oil
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Tabouli</h4>
+                    <b>$5</b>
+                    <p class="ingredients">
+                        Parsley, tomato, olive oil
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Burrata with Tomato, Basil and Prosciutto</h4>
+                    <b>$10</b>
+                    <p class="ingredients">
+                        Burrata, tomato, basil, prosciutto
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Whipped Feta Dip</h4>
+                    <b>$5</b>
+                    <p class="ingredients">
+                        Feta, olive oil
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Orange Cardamom Olive Oil Cake</h4>
+                    <b>$5</b>
+                    <p class="ingredients">
+                        Orange, cardamom, olive oil
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Pizzicati</h4>
+                    <b>$5</b>
+                    <p class="ingredients">
+                        Almond, orange, olive oil
+                    </p>
+                </div>
+                <div class="item">
+                    <h4 class="label">Baklava</h4>
+                    <b>$5</b>
+                    <p class="ingredients">
+                        Phyllo, pistachio, honey
+                    </p>
+                </div>
+            </article>
+        </section>
+        <section class="about" id="about">
+            <img src="assets/founders.jpeg" alt="Image of Little Lemon family members">
+            <div class="description">
+                <h2>About Us</h2>
+                <p>Little Lemon is not just a restaurant; it is a culinary destination that captures the essence of
+                    Mediterranean cuisine with a contemporary touch. As a cherished family-owned establishment, we take
+                    pride in our heritage and the authentic flavors we bring to every plate.</p>
+                <p>Situated in the vibrant heart of downtown Toronto, our restaurant has become a beloved fixture in the
+                    community for over two decades. With each passing year, we have garnered a loyal following of food
+                    enthusiasts who appreciate our commitment to quality, innovation, and exceptional service.</p>
+                <p>Little Lemon is more than just a restaurant; it's a celebration of the Mediterranean spirit and a
+                    testament to the power of food to bring people together. Join us on a culinary journey that will
+                    awaken your senses and leave you with lasting memories. We look forward to welcoming you to our
+                    family and sharing the flavors of the Mediterranean with you</p>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <div class="address">
+                <h2>Contact Us</h2>
+                <p>Little Lemon</p>
+                <p>123 Lemon Street</p>
+                <p>Toronto, ON M1M 1M1</p>
+                <p>416-123-4567</p>
+            </div>
+            <div class="hours">
+                <h2>Hours</h2>
+                <p>Monday - Friday: 11am - 10pm</p>
+                <p>Saturday - Sunday: 12pm - 10pm</p>
+            </div>
+        </section>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     </main>
 
     <footer>
-        <p>&copy; 2023 Little Lemon. All rights reserved.</p>
+        <div>
+            <img src="assets/Asset 20@4x.png" alt="Footer Logo">
+        </div>
+        <div>
+            <p>&copy; 2023 Little Lemon. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
 
 </html>
