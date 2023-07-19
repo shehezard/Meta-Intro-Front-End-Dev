@@ -15,3 +15,11 @@ Credits for recipes:
 https://www.themediterraneandish.com/best-mediterranean-recipes-of-2018/
 
 Images from Image Creator Dall-e bing
+
+
+Color Palette:
+    Rustic Brown: #8B4513
+    Lemon Yellow: #FFFF00
+    Olive Green: #808000
+    Mediterranean Blue: #0066CC
+    Earthy Terracotta: #CC4E5C

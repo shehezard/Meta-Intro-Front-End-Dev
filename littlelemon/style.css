@@ -1,24 +1,246 @@
+html {
+    scroll-behavior: smooth;
+}
 
+body {
+    background-color: #FAFAFA;
+    color: #333333;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    max-width: 1400px;
+    margin: auto;
+}
 
-header {
-    background-color: aquamarine;
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.header {
+    grid-area: header;
+    background-color: antiquewhite;
 }
 
 nav {
-    background-color: blueviolet;
+    grid-area: nav;
 }
 
-main .promotion {
-    background-color: burlywood;
+main .about,
+main .contact {
+    background-color: antiquewhite;
+    margin: 1rem;
+    border: 2px solid antiquewhite;
+    border-radius: 1rem;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.28);
+
 }
 
-main .info {
-    background-color: darkolivegreen;
+main .menu,
+main .contact {
+    background-color: cadetblue;
+    margin: 1rem;
+    border: 2px solid cadetblue;
+    border-radius: 1rem;
+    color: white;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.28);
 }
 
 footer {
+    background-color: antiquewhite;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.28);
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 12rem auto;
+    grid-template-rows: auto;
+    grid-template-areas: "header nav";
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.28);
+}
+
+.header img {
+    padding: 1rem;
+    width: 10rem;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    margin-left: -12rem;
+}
+
+nav li {
+    padding: 1rem;
+    margin: 0rem 0.5rem 0rem 0.5rem;
+    border-bottom: 1px solid cadetblue;
+    width: 10rem;
+    text-align: center;
+    transition: all 0.5s ease;
+    scale: 1;
+}
+
+nav li:hover {
+    background-color: cadetblue;
+    color: white;
+    transition: all 0.5s ease;
+    scale: 1.05;
+}
+
+.promotion img {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.5s ease;
+    scale: 1;
+    border-radius: 1rem;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.28);
+}
+
+.promotion img:hover {
+    color: white;
+    transition: all 0.5s ease;
+    animation: shake 0.5s;
+    scale: 1.01;
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info img {
+    width: 20rem;
+    border-radius: 0.9rem 0.9rem 0rem 0rem;
+}
+
+.card {
+    background-color: antiquewhite;
+    width: 20rem;
+    margin: 1rem;
+    border: 2px solid cadetblue;
+    border-radius: 1rem;
+    transition: all 0.5s ease;
+    scale: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card:hover {
+    background-color: cadetblue;
+    color: white;
+    transition: all 0.5s ease;
+    scale: 1.05;
+}
+
+.card .description {
+    padding: 0rem 1rem 0rem 1rem;
+    margin-top: -1rem;
+    text-align: justify;
+}
+
+
+.menu .description {
+    text-align: center;
+    width: 40%;
+    margin: auto;
+}
+
+.menu .list {
+    width: 50rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu .item {
+    width: 20rem;
+    margin: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     background-color: cadetblue;
 }
+
+.menu b {
+    float: right;
+    margin-top: -2.5rem;
+}
+
+.menu .ingredients {
+    font-style: italic;
+    border-top: 2px solid white;
+}
+
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about>img {
+    width: 25rem;
+    height: 25rem;
+    padding: 5rem;
+}
+
+.about .description {
+    width: 25rem;
+    padding: 2rem;
+}
+
+.about .description>p {
+    text-align: justify;
+}
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact>div {
+    width: 25rem;
+    margin: 2rem;
+    background-color: cadetblue;
+}
+
+.contact>div>* {
+    margin: 1rem;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer>div {
+    width: 25rem;
+}
+
+.footer-logo img {
+    padding: 1rem;
+    width: 4rem;
+}
+
+.copyright {
+    text-align: right;
+}
+
 
 #myBtn {
     display: none;
@@ -29,13 +251,124 @@ footer {
     font-size: 18px;
     border: none;
     outline: none;
-    background-color: red;
+    background-color: cadetblue;
+    border: 1px solid cadetblue;
     color: white;
     cursor: pointer;
     padding: 15px;
     border-radius: 4px;
-  }
-  
-  #myBtn:hover {
-    background-color: #555;
-  }
+    transition: all 0.5s ease;
+    scale: 1;
+}
+
+#myBtn:hover {
+    background-color: antiquewhite;
+    border: 1px solid cadetblue;
+    color: #333333;
+    transition: all 0.5s ease;
+    scale: 1.05;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0.5px, 0.5px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-0.5px, -0.5px) rotate(-0.25deg);
+    }
+
+    20% {
+        transform: translate(-0.5px, 0px) rotate(0.25deg);
+    }
+
+    30% {
+        transform: translate(0.5px, 0.5px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(0.5px, -0.5px) rotate(0.25deg);
+    }
+
+    50% {
+        transform: translate(-0.5px, 0.5px) rotate(-0.25deg);
+    }
+
+    60% {
+        transform: translate(-0.5px, 0.5px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(0.5px, 0.5px) rotate(-0.25deg);
+    }
+
+    80% {
+        transform: translate(-0.5px, -0.5px) rotate(0.25deg);
+    }
+
+    90% {
+        transform: translate(0.5px, 0.5px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0.5px, -0.5px) rotate(-0.25deg);
+    }
+}
+
+@media (max-width: 1620px) {
+    nav ul {
+        margin-left: 0;
+    }
+
+    .menu .item {
+        width: 20rem;
+    }
+}
+
+@media (max-width: 830px) {
+    nav ul {
+        margin-left: 0;
+    }
+
+    .menu .list,
+    .menu .description {
+        width: 100%;
+    }
+
+    .menu .description>p {
+        text-align: justify;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .menu .item {
+        width: 100%;
+    }
+
+    .about>img {
+        padding: 2rem 0.5rem 0.5rem 0.5rem;
+    }
+
+    .about .description {
+        padding: 0.5rem;
+    }
+
+    .contact>div {
+        margin: 0.5rem;
+    }
+
+    footer>div {
+        width: 25rem;
+    }
+
+    .footer-logo img {
+        display: block;
+        margin: auto;
+        padding: 1rem;
+        width: 4rem;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+}

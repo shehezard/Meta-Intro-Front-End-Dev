@@ -21,24 +21,26 @@
     <meta name="og:site_name" content="Little Lemon">
 
     <!-- Include CSS files -->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <img src="assets/Asset 16@4x.png" alt="Footer Logo">
-    </header>
+    <div class="header">
+        <header>
+            <img src="assets/Asset 16@4x.png" alt="Footer Logo">
+        </header>
+        <nav>
+            <ul>
+                <a href="#"><li>Home</li></a>
+                <a href="#menu"><li>Menu</li></a>
+                <a href="#about"><li>About</li></a>
+                <a href="#contact"><li>Contact</li></a>
+            </ul>
+        </nav>
+    </div>
 
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main>
+    <main class="main">
         <section class="promotion">
             <a href="#">
                 <img src="assets/promotion.png" alt="Promotion: Get a free lemon with every order over $10!">
@@ -226,11 +228,11 @@
         <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     </main>
 
-    <footer>
-        <div>
+    <footer class="footer">
+        <div class="footer-logo">
             <img src="assets/Asset 20@4x.png" alt="Footer Logo">
         </div>
-        <div>
+        <div class="copyright">
             <p>&copy; 2023 Little Lemon. All rights reserved.</p>
         </div>
     </footer>
