@@ -8,11 +8,14 @@ const Nav = () => {
                 <a href="#menu">
                     <li>Menu</li>
                 </a>
+                <a href="#booking">
+                    <li>Booking</li>
+                </a>
                 <a href="#about">
                     <li>About</li>
                 </a>
-                <a href="#contact">
-                    <li>Contact</li>
+                <a href="#login">
+                    <li>Login</li>
                 </a>
             </ul>
         </nav>
