@@ -8,6 +8,7 @@ body {
   font-family: 'Montserrat', Helvetica, sans-serif;
   max-width: 1400px;
   margin: auto;
+  padding-top: 5rem;
 }
 
 a:link,
@@ -78,14 +79,13 @@ nav ul {
   flex-wrap: wrap;
   justify-content: center;
   list-style-type: none;
-  margin-left: -12rem;
 }
 
 nav li {
   padding: 1rem;
-  margin: 0rem 0.5rem 0rem 0.5rem;
+  margin: 0rem 0.25rem 0rem 0.25rem;
   border-bottom: 1px solid cadetblue;
-  width: 10rem;
+  width: 7rem;
   text-align: center;
   transition: all 0.5s ease;
   scale: 1;
