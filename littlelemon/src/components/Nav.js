@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { Link } from 'react-router-dom';
 
+import BookingForm from "./BookingForm";
+import Popup from "./Popup";
+
 const Nav = () => {
-    let a = null;
+    const [isOpen, setIsOpen] = useState(false);
+    const [a, setLink] = useState(null);
 
-    const HandleClick = (link) => {
-        a = link.currentTarget.getAttribute("refto");
+    const togglePopup = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
 
-        setTimeout(() => {
+        setIsOpen(!isOpen);
+    }
+
+    const HandleClick = (e) => {
+        setLink(e.currentTarget.getAttribute("refto"));
+    };
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
+    }, [isOpen]);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
             const element = document.getElementById(a);
 
             if (element) {
@@ -20,7 +41,9 @@ const Nav = () => {
                 window.scrollTo({ top: 0 });
             }
         }, 10);
-    };
+
+        return () => clearTimeout(timeout);
+    }, [a]);
 
     return (
         <nav>
@@ -28,7 +51,7 @@ const Nav = () => {
                 <Link to="/" onClick={HandleClick}><li>Home</li></Link>
                 <Link to="/" refto="about" onClick={HandleClick}><li>About</li></Link>
                 <Link to="/menu"><li>Menu</li></Link>
-                <Link to="/booking"><li>Reservations</li></Link>
+                <Link to="/" onClick={togglePopup}><li>Reservations</li></Link>
                 <a href="#orderonline">
                     <li>Order Online</li>
                 </a>
@@ -36,7 +59,12 @@ const Nav = () => {
                     <li>Login</li>
                 </a>
             </ul>
+            {isOpen && <Popup
+                content={<BookingForm />}
+                handleClose={togglePopup}
+            />}
         </nav>
+
     );
 };
 

@@ -11,6 +11,10 @@ body {
   padding-top: 5rem;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 a:link,
 a:visited,
 a:hover,
