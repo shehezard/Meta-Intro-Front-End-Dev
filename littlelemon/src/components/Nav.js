@@ -1,32 +1,15 @@
 import React, { useState, useEffect } from "react";
-
 import { Link } from 'react-router-dom';
-
-import BookingForm from "./BookingForm";
-import Popup from "./Popup";
+import { useBookingFormContext } from "../context/BookingFormContext";
 
 const Nav = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const { toggleBookingForm } = useBookingFormContext();
+
     const [a, setLink] = useState(null);
-
-    const togglePopup = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        setIsOpen(!isOpen);
-    }
 
     const HandleClick = (e) => {
         setLink(e.currentTarget.getAttribute("refto"));
     };
-
-    useEffect(() => {
-        if (isOpen) {
-            document.body.classList.add("no-scroll");
-        } else {
-            document.body.classList.remove("no-scroll");
-        }
-    }, [isOpen]);
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -46,25 +29,22 @@ const Nav = () => {
     }, [a]);
 
     return (
-        <nav>
-            <ul>
-                <Link to="/" onClick={HandleClick}><li>Home</li></Link>
-                <Link to="/" refto="about" onClick={HandleClick}><li>About</li></Link>
-                <Link to="/menu"><li>Menu</li></Link>
-                <Link to="/" onClick={togglePopup}><li>Reservations</li></Link>
-                <a href="#orderonline">
-                    <li>Order Online</li>
-                </a>
-                <a href="#login">
-                    <li>Login</li>
-                </a>
-            </ul>
-            {isOpen && <Popup
-                content={<BookingForm />}
-                handleClose={togglePopup}
-            />}
-        </nav>
-
+        <div>
+            <nav>
+                <ul>
+                    <Link to="/" onClick={HandleClick}><li>Home</li></Link>
+                    <Link to="/" refto="about" onClick={HandleClick}><li>About</li></Link>
+                    <Link to="/menu"><li>Menu</li></Link>
+                    <a href="#" onClick={toggleBookingForm}><li>Reservations</li></a>
+                    <a href="#orderonline">
+                        <li>Order Online</li>
+                    </a>
+                    <a href="#login">
+                        <li>Login</li>
+                    </a>
+                </ul>
+            </nav>
+        </div>
     );
 };
 

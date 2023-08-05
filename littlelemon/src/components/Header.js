@@ -34,11 +34,11 @@ const Header = () => {
             left: 0,
             right: 0,
             transform: "translateY(0)",
-            zIndex: 100
+            zIndex: 10
         }}
         >
             <img src={logoheader} alt="Header Logo" />
-            <Nav></Nav>
+            <Nav/>
         </header>
     );
 };
