@@ -4,6 +4,8 @@ import Nav from '../components/Nav';
 
 import logoheader from '../assets/logoheader.png';
 
+import "./Header.css";
+
 const Header = () => {
     const headerRef = useRef(null);
     const prevScrollY = useRef(0);
@@ -38,7 +40,7 @@ const Header = () => {
         }}
         >
             <img src={logoheader} alt="Header Logo" />
-            <Nav/>
+            <Nav className="navheader"/>
         </header>
     );
 };

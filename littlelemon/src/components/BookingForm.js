@@ -62,6 +62,13 @@ const BookingForm = () => {
     }
   };
 
+  const handleCancel = (event) => {
+    event.preventDefault();
+
+    clearForm();
+    closeBookingForm();
+  };
+
   useEffect(() => {
     if (showBookingForm) {
       document.body.style.overflowY = "hidden";
@@ -162,8 +169,8 @@ const BookingForm = () => {
             </div>
           </fieldset>
           <button type="submit">Submit</button>
-          <button className="cancel-button" onClick={closeBookingForm}>Cancel</button>
-          <button className="close-button" onClick={closeBookingForm}>x</button>
+          <button className="cancel-button" onClick={handleCancel}>Cancel</button>
+          <button className="close-button" onClick={handleCancel}>x</button>
         </form>
 
       </div>

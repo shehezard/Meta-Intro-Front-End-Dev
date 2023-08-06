@@ -1,0 +1,39 @@
+footer {
+    background-color: #f5f5f5;
+    margin-top: 2rem;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-logo {
+    padding: 2rem;
+}
+
+.footer-links {
+    padding: 2rem;
+}
+
+.footer-logo img {
+    width: 10rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-links > section {
+    margin: 2rem;
+}
+
+.footer-links ul {
+    list-style-type: none;
+}
+
+.copyright {
+    width: 100%;
+    margin: 1rem;
+    text-align: center;
+}

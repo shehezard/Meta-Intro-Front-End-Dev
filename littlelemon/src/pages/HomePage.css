@@ -1,0 +1,178 @@
+button {
+    background-color: cadetblue;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    background-color: #555;
+    transition: all 0.5s ease;
+}
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: #f0f0f0;
+    padding: 2rem;
+    justify-content: center;
+}
+
+.hero img {
+    width: 30rem;
+}
+
+.hero .description {
+    flex: 1;
+    padding-right: 2rem;
+    min-width: 25rem;
+}
+
+.hero button {
+    position: absolute;
+    bottom: 2rem;
+}
+
+.higlights,
+.testimonials {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #f0f0f0;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.higlights>h1,
+.testimonials>h1 {
+    margin: 0;
+}
+
+.higlights .cards,
+.testimonials .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.higlights img {
+    width: 20rem;
+    border-radius: 0.9rem 0.9rem 0rem 0rem;
+}
+
+.higlights .card {
+    background-color: antiquewhite;
+    width: 20rem;
+    margin: 1rem;
+    border: 2px solid cadetblue;
+    border-radius: 1rem;
+    transition: all 0.5s ease;
+    scale: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.higlights .card:hover,
+.testimonials .card:hover {
+    background-color: cadetblue;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.higlights .card .description {
+    padding: 0rem 1rem 3rem 1rem;
+    margin-top: -1rem;
+    text-align: justify;
+    position: relative;
+}
+
+.card .description .price {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    margin: 0rem 1rem 0rem 0rem;
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.card>a {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: black;
+    font-weight: bold;
+}
+
+.higlights button {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    margin: 2rem;
+}
+
+.testimonials {
+    align-items: center;
+}
+
+.testimonials .card {
+    background-color: antiquewhite;
+    margin: 1rem;
+    border: 2px solid cadetblue;
+    border-radius: 1rem;
+    transition: all 0.5s ease;
+    scale: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.testimonials img {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 100%;
+}
+
+.testimonials .user {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.testimonials .rating {
+    font-weight: bold;
+}
+
+.testimonials .user>* {
+    padding: 0.5rem;
+}
+
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f0f0f0;
+    margin-top: 2rem;
+}
+
+.about>img {
+    width: 28rem;
+    height: 28rem;
+    padding: 2rem;
+}
+
+.about .description {
+    width: 25rem;
+    padding: 2rem;
+}
+
+.about .description>p {
+    text-align: justify;
+}
