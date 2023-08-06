@@ -11,7 +11,7 @@ const HomePage = () => {
     const { toggleBookingForm } = useBookingFormContext();
 
     return (
-        <>
+        <section>
             <section className="hero">
                 <div className="description">
                     <h1>Little Lemon</h1>
@@ -106,7 +106,7 @@ const HomePage = () => {
                 </div>
                 <img src={placeholder} />
             </section>
-        </>
+        </section>
     );
 };
 
