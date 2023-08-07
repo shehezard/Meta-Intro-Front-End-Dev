@@ -35,27 +35,9 @@ const Nav = (props) => {
         return () => clearTimeout(timeout);
     });
 
-    return props.className === "navheader" ?
-        (
-            <div key={props.className} className={props.className}>
-                <nav>
-                    <ul>
-                        <Link to="/" key="home" onClick={HandleClick}><li>Home</li></Link>
-                        <Link to="/" key="about" refto="about" onClick={HandleClick}><li>About</li></Link>
-                        <Link to="/menu" key="Menu" ><li>Menu</li></Link>
-                        <a href="#book" onClick={toggleBookingForm}><li>Reservations</li></a>
-                        <a href="#orderonline">
-                            <li>Order Online</li>
-                        </a>
-                        <a href="#login">
-                            <li>Login</li>
-                        </a>
-                    </ul>
-                </nav>
-            </div>
-        ) :
-        (
-            <div key={props.className} className={props.className}>
+    return (
+        <div key={props.className} className={props.className}>
+            <nav>
                 <ul>
                     <Link to="/" onClick={HandleClick}><li>Home</li></Link>
                     <Link to="/" refto="about" onClick={HandleClick}><li>About</li></Link>
@@ -68,8 +50,9 @@ const Nav = (props) => {
                         <li>Login</li>
                     </a>
                 </ul>
-            </div>
-        );
+            </nav>
+        </div>
+    );
 };
 
 export default Nav;
