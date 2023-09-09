@@ -1,6 +1,4 @@
 button {
-    background-color: cadetblue;
-    color: white;
     border: none;
     border-radius: 0.5rem;
     padding: 1rem;
@@ -8,7 +6,6 @@ button {
 }
 
 button:hover {
-    background-color: #555;
     transition: all 0.5s ease;
 }
 
@@ -17,7 +14,6 @@ button:hover {
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
-    background-color: #f0f0f0;
     padding: 2rem;
     justify-content: center;
 }
@@ -43,7 +39,6 @@ button:hover {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color: #f0f0f0;
     padding: 2rem;
     margin-top: 2rem;
 }
@@ -67,7 +62,6 @@ button:hover {
 }
 
 .higlights .card {
-    background-color: antiquewhite;
     width: 20rem;
     margin: 1rem;
     border: 2px solid cadetblue;
@@ -79,8 +73,6 @@ button:hover {
 
 .higlights .card:hover,
 .testimonials .card:hover {
-    background-color: cadetblue;
-    color: white;
     transition: all 0.5s ease;
 }
 
@@ -96,8 +88,6 @@ button:hover {
     top: 0rem;
     right: 0rem;
     margin: 0rem 1rem 0rem 0rem;
-    color: #e67e22;
-    font-weight: bold;
 }
 
 .card>a {
@@ -105,7 +95,6 @@ button:hover {
     bottom: 1rem;
     left: 1rem;
     color: black;
-    font-weight: bold;
 }
 
 .higlights button {
@@ -120,7 +109,6 @@ button:hover {
 }
 
 .testimonials .card {
-    background-color: antiquewhite;
     margin: 1rem;
     border: 2px solid cadetblue;
     border-radius: 1rem;
@@ -146,7 +134,7 @@ button:hover {
 }
 
 .testimonials .rating {
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .testimonials .user>* {
@@ -158,7 +146,6 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #f0f0f0;
     margin-top: 2rem;
 }
 

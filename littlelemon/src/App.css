@@ -1,4 +1,92 @@
- html {
+ 
+ /* Primary Colors */
+:root {
+    --primary-color1: #495E57;
+    --primary-color2: #F4CE14;
+  }
+  
+  /* Secondary Colors */
+  :root {
+    --secondary-color1: #EE9972;
+    --secondary-color2: #FBDABB;
+    --secondary-color3: #EDEFEE;
+    --secondary-color4: #333333;
+  }
+  
+  /* Typefaces */
+  /* Typefaces 1: Markazi Text */
+  @font-face {
+    font-family: 'Markazi Text';
+    src: url('./assets/fonts/MarkaziText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Typefaces 2: Karla */
+  @font-face {
+    font-family: 'Karla';
+    src: url('./assets/fonts/Karla-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Typography */
+  /* Markazi Text */
+  .display-title {
+    font-family: 'Markazi Text';
+    font-weight: 500;
+    font-size: 64pt;
+  }
+  
+  .subtitle {
+    font-family: 'Markazi Text';
+    font-weight: normal;
+    font-size: 40pt;
+  }
+  
+  /* Karla */
+  .lead-text {
+    font-family: 'Karla';
+    font-weight: 500;
+    font-size: 18pt;
+  }
+  
+  .section-title {
+    font-family: 'Karla';
+    font-weight: 800;
+    font-size: 20pt;
+  }
+  
+  .section-categories {
+    font-family: 'Karla';
+    font-weight: 800;
+    font-size: 16pt;
+  }
+  
+  .card-title {
+    font-family: 'Karla';
+    font-weight: bold;
+    font-size: 18pt;
+  }
+  
+  .paragraph-text {
+    font-family: 'Karla';
+    font-weight: normal;
+    font-size: 16pt;
+    line-height: 1.5;
+    max-width: 65ch;
+  }
+  
+  .highlight-text {
+    font-family: 'Karla';
+    font-weight: 500;
+    font-size: 16pt;
+  }
+  
+  
+  
+  
+  html {
      scroll-behavior: smooth;
  }
 
@@ -6,6 +94,7 @@
      padding-top: 5rem;
      max-width: 1400px;
      margin: auto;
+     color: var(--secondary-color4);
  }
 
  ::-webkit-scrollbar {
@@ -19,11 +108,11 @@
  }
 
  ::-webkit-scrollbar-thumb:hover {
-     background-color: #555;
+     background-color: var(--secondary-color4);
  }
 
  ::-webkit-scrollbar-track {
-     background-color: #f0f0f0;
+     background-color: var(--secondary-color3);
      transition: background-color 0.3s ease-in-out;
  }
 

@@ -1,32 +1,36 @@
 import logofooter from '../assets/logofooter.png';
 import Nav from './Nav';
 
+import { useStyleContext } from "../context/StyleContext";
+
 import "./Footer.css";
 
 const Footer = () => {
+    const { classSectionTitle, classHighlightText } = useStyleContext();
+
     return (
         <footer className="footer">
             <section className="footer-logo">
-                <img src={logofooter} alt="Footer Logo" />
+                <a href="#"><img src={logofooter} alt="Footer Logo" /></a>
             </section>
             <div className="footer-links">
                 <section className="doormat-links">
-                    <h2>Doormat Navigation</h2>
+                    <h2 className={classSectionTitle}>Doormat Navigation</h2>
                     <Nav className="navdoormat" />
                 </section>
                 <section className="contact" id="contact">
-                    <h2>Contact Us</h2>
-                    <p>Little Lemon</p>
-                    <p>123 Lemon Street</p>
-                    <p>Toronto, ON M1M 1M1</p>
-                    <p>416-123-4567</p>
+                    <h2 className={classSectionTitle}>Contact Us</h2>
+                    <p className={classHighlightText}>Little Lemon</p>
+                    <p className={classHighlightText}>123 Lemon Street</p>
+                    <p className={classHighlightText}>Toronto, ON M1M 1M1</p>
+                    <p className={classHighlightText}>416-123-4567</p>
                 </section>
                 <section className="social-media">
-                    <h2>Social Media Links</h2>
+                    <h2 className={classSectionTitle}>Social Media Links</h2>
                     <ul>
-                        <a href="#"><li>Facebook</li></a>
-                        <a href="#"><li>Instagram</li></a>
-                        <a href="#"><li>Twitter</li></a>
+                        <a href="#"><li className={classHighlightText}>Facebook</li></a>
+                        <a href="#"><li className={classHighlightText}>Instagram</li></a>
+                        <a href="#"><li className={classHighlightText}>Twitter</li></a>
                     </ul>
                 </section>
             </div>
