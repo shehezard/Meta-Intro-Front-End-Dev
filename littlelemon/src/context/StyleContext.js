@@ -10,13 +10,25 @@ export const StyleProvider = ({ children }) => {
     const classCardTitle = "card-title";
     const classParagraphText = "paragraph-text";
 
+
+
+
+    const classHeaderButton = "header-button";
+    const classFooterLink = "footer-link";
+    const classHeroText = "hero-text";
+
+
     return (
         <StyleContext.Provider
             value={{
+                classHeaderButton,
+                classFooterLink,
+                classHeroText,
                 classSectionTitle,
+                classSectionCategories,
+
                 classLeadText,
                 classHighlightText,
-                classSectionCategories,
                 classCardTitle,
                 classParagraphText,
             }}

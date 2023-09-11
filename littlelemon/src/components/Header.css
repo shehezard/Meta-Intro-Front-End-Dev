@@ -29,7 +29,7 @@ header img {
 }
 
 .navheader li {
-    padding: 1rem;
+    padding: 1rem 0rem 1rem 0rem;
     margin: 0rem 0.25rem 0rem 0.25rem;
     width: 12rem;
     text-align: center;

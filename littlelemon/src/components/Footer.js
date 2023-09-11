@@ -1,17 +1,23 @@
-import logofooter from '../assets/logofooter.png';
+import { useStyleContext } from "../context/StyleContext";
+import { Link } from 'react-router-dom';
+
 import Nav from './Nav';
 
-import { useStyleContext } from "../context/StyleContext";
+import logofooter from '../assets/logofooter.png';
 
 import "./Footer.css";
 
 const Footer = () => {
     const { classSectionTitle, classHighlightText } = useStyleContext();
 
+    const HandleClick = () => {
+        window.scrollTo({ top: 0 });
+    };
+
     return (
         <footer className="footer">
             <section className="footer-logo">
-                <a href="#"><img src={logofooter} alt="Footer Logo" /></a>
+                <Link onClick={HandleClick}><img src={logofooter} alt="Footer Logo" /></Link>
             </section>
             <div className="footer-links">
                 <section className="doormat-links">

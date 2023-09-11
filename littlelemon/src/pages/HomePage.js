@@ -5,6 +5,10 @@ import { useBookingFormContext } from "../context/BookingFormContext";
 import { useStyleContext } from "../context/StyleContext";
 
 import placeholder from '../assets/placeholder.png';
+import chefplate from '../assets/images/restauranfood.jpg';
+import shakshuka from '../assets/images/shakshuka.jpeg';
+import greengoddess from '../assets/images/greengoddess.jpeg';
+import falafel from '../assets/images/falafelbowls.jpeg';
 
 import "./HomePage.css";
 
@@ -13,6 +17,7 @@ const HomePage = () => {
     const {
         classSectionTitle,
         classLeadText,
+        classHeroText,
         classHighlightText,
         classSectionCategories,
         classCardTitle,
@@ -25,31 +30,31 @@ const HomePage = () => {
                 <div className="description">
                     <h1 className={classSectionTitle}>Little Lemon</h1>
                     <p className={classSectionCategories}>Chicago</p>
-                    <p className={classParagraphText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <button onClick={toggleBookingForm}>Reserve a table</button>
+                    <p className={classHeroText}>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
                 </div>
-                <img src={placeholder} alt="Restaurant" />
+                <button onClick={toggleBookingForm}>Reserve a Table</button>
+                <img src={chefplate} alt="Restaurant" />
             </section>
 
             <section className="higlights">
-                <h1 className={classSectionTitle}>Specials</h1>
+                <h1 className={classSectionTitle}>This weeks specials!</h1>
                 <Link to="/menu"><button>Online Menu</button></Link>
                 <div className="cards">
                     <article className="card">
-                        <img src={placeholder} alt="Shakshuka" />
+                        <img src={shakshuka} alt="Shakshuka" />
                         <div className="description">
                             <h3 className={classCardTitle}>Shakshuka</h3>
-                            <p className={`price ${classSectionCategories}`}>$12.99</p>
+                            <p className={`price ${classHighlightText}`}>$12.99</p>
                             <p className={classLeadText}>A classic North African dish hailing from Tunisia, shakshuka is simple sunny side up eggs
                                 braised in a chunky tomato sauce with bell peppers and onions.</p>
                         </div>
                         <a href="#" className={classSectionCategories}>Order a delivery</a>
                     </article>
                     <article className="card">
-                        <img src={placeholder} alt="Green Goddess Chicken Thighs" />
+                        <img src={greengoddess} alt="Green Goddess Chicken Thighs" />
                         <div className="description">
                             <h3 className={classCardTitle}>Lemon Garlic Cod</h3>
-                            <p className={`price ${classSectionCategories}`}>$12.99</p>
+                            <p className={`price ${classSectionCategories}`}>$5.99</p>
                             <p className={classLeadText}>This baked fish recipe has been a fan favorite for a long time! It's ready in just over 15
                                 minutes and it's all about the garlic and lemon sauce. Made in a skillet, the secret is in the
                                 white fish fillet.</p>
@@ -57,10 +62,10 @@ const HomePage = () => {
                         <a href="#" className={classSectionCategories}>Order a delivery</a>
                     </article>
                     <article className="card">
-                        <img src={placeholder} alt="Falafel Bowls" />
+                        <img src={falafel} alt="Falafel Bowls" />
                         <div className="description">
                             <h3 className={classCardTitle}>Falafel Bowls</h3>
-                            <p className={`price ${classSectionCategories}`}>$12.99</p>
+                            <p className={`price ${classSectionCategories}`}>$5.00</p>
                             <p className={classLeadText}>The perfect Mediterranean twist, made the traditional way. With your favorite hummus dip and a
                                 salad. And to jazz it up even more, some pickles and olives too!</p>
                         </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from 'react-router-dom';
 
 import Nav from '../components/Nav';
 
@@ -10,12 +11,16 @@ const Header = () => {
   const headerRef = useRef(null);
   const prevScrollY = useRef(0);
 
+  const HandleClick = () => {
+    window.scrollTo({ top: 0 });
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
       prevScrollY.current < currentScrollY
-        ? headerRef.current.style.transform = "translateY(-97px)"
+        ? headerRef.current.style.transform = "translateY(-100px)"
         : headerRef.current.style.transform = "translateY(0)";
 
       prevScrollY.current = currentScrollY;
@@ -39,7 +44,7 @@ const Header = () => {
         zIndex: 10
       }}
     >
-      <a href="#"><img src={logoheader} alt="Header Logo" /></a>
+      <Link onClick={HandleClick}><img src={logoheader} alt="Header Logo" /></Link>
       <Nav className="navheader" />
     </header>
   );
