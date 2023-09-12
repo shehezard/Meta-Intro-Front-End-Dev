@@ -8,7 +8,11 @@ import logofooter from '../assets/logofooter.png';
 import "./Footer.css";
 
 const Footer = () => {
-    const { classSectionTitle, classHighlightText } = useStyleContext();
+    const { 
+        classSectionCategories,
+        classSectionTitle, 
+        classHighlightText 
+    } = useStyleContext();
 
     const HandleClick = () => {
         window.scrollTo({ top: 0 });
@@ -21,18 +25,18 @@ const Footer = () => {
             </section>
             <div className="footer-links">
                 <section className="doormat-links">
-                    <h2 className={classSectionTitle}>Doormat Navigation</h2>
+                    <h2 className={classSectionCategories}>Doormat Navigation</h2>
                     <Nav className="navdoormat" />
                 </section>
                 <section className="contact" id="contact">
-                    <h2 className={classSectionTitle}>Contact Us</h2>
+                    <h2 className={classSectionCategories}>Contact Us</h2>
                     <p className={classHighlightText}>Little Lemon</p>
                     <p className={classHighlightText}>123 Lemon Street</p>
                     <p className={classHighlightText}>Toronto, ON M1M 1M1</p>
                     <p className={classHighlightText}>416-123-4567</p>
                 </section>
                 <section className="social-media">
-                    <h2 className={classSectionTitle}>Social Media Links</h2>
+                    <h2 className={classSectionCategories}>Social Media Links</h2>
                     <ul>
                         <a href="#"><li className={classHighlightText}>Facebook</li></a>
                         <a href="#"><li className={classHighlightText}>Instagram</li></a>

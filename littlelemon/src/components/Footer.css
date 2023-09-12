@@ -24,6 +24,11 @@ footer {
     flex-wrap: wrap;
 }
 
+.footer-links a:hover {
+    color: var(--primary-color1);
+    transition: all 0.3s ease;
+}
+
 .footer-links>section {
     margin: 2rem;
 }

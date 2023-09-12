@@ -85,12 +85,6 @@
    font-size: 16pt;
  }
 
- .footer-link {
-   font-family: 'Karla';
-   font-weight: 500;
-   font-size: 16pt;
- }
-
  .hero-text {
   font-family: 'Karla';
   font-weight: bold;
@@ -174,8 +168,17 @@
   border: none;
   border-radius: 1rem;
   background-color: var(--primary-color2);
+  color: var(--secondary-color4);
   font-family: 'Karla';
   font-weight: bold;
   font-size: 1.25rem;
   text-transform: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.3s ease;
+ }
+
+ button:hover {
+  background-color: var(--primary-color1);
+  color: var(--primary-color2);
+  transition: all 0.3s ease;
  }

@@ -1,14 +1,17 @@
 .menu {
     padding: 50px;
+    margin-top: 50px;
     text-align: center;
+    background-color: var(--secondary-color2);
+    border-radius: 2rem;
   }
   
   .description {
     margin-bottom: 30px;
   }
   
-  .description h2 {
-    margin-bottom: 10px;
+  .description h1 {
+    margin: 0;
   }
   
   .list {
@@ -18,18 +21,30 @@
   }
   
   .item {
-    border: 1px solid #ddd;
+    border: 2px solid var(--primary-color1);
     padding: 20px;
-    text-align: left;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--secondary-color3);
+    border-radius: 2rem;
   }
   
   .item h4 {
     margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  .item p:first-of-type {
+    text-align: right;
+  }
+
+  .item .price {
+    color: var(--secondary-color1);
   }
   
   .item p.ingredients {
     margin-top: 10px;
+    text-align: left;
+    font-style: italic;
   }
   
   @media screen and (max-width: 768px) {

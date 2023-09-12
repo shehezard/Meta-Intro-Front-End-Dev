@@ -5,7 +5,7 @@ import { useStyleContext } from "../context/StyleContext";
 
 const Nav = ({className}) => {
     const { toggleBookingForm } = useBookingFormContext();
-    const { classHeaderButton, classFooterLink } = useStyleContext();
+    const { classHeaderButton, classHighlightText } = useStyleContext();
 
     const [link, setLink] = useState(null);
     const [useEffectTriggered, setUseEffectTriggered] = useState(false);
@@ -15,7 +15,7 @@ const Nav = ({className}) => {
         setUseEffectTriggered(false);
     };
 
-    const navClass = className === "navheader" ? classHeaderButton : classFooterLink;
+    const navClass = className === "navheader" ? classHeaderButton : classHighlightText;
 
     useEffect(() => {
         if (useEffectTriggered)

@@ -15,6 +15,9 @@ import courier from '../assets/images/delivery-courier.png';
 import johnwick from '../assets/images/john-wick.jpg'
 import simoncowell from '../assets/images/simon-cowell.jpg'
 import iandooley from '../assets/images/ian-dooley.jpg'
+import mahatmagandhi from '../assets/images/mahatma-gandhi.jpg'
+
+import founders from '../assets/images/founders.jpg'
 
 import "./HomePage.css";
 
@@ -88,7 +91,7 @@ const HomePage = () => {
                             <img src={johnwick} />
                             <p className={classHighlightText}>John Wick</p>
                         </div>
-                        <p className="review">"Tell them all. Whoever comes, Whoever it is, I'll eat them. I'll eat them all. Five stars."</p>
+                        <p className="review">"Yeah."</p>
                     </article>
                     <article className="card">
                         <p className={`rating ${classHighlightText}`}>2 Stars</p>
@@ -107,24 +110,25 @@ const HomePage = () => {
                         <p className="review">"I just went for lunch and walked in on John Wick and Simon Cowell. Amazing experience."</p>
                     </article>
                     <article className="card">
-                        <p className={`rating ${classHighlightText}`}>5 Stars</p>
+                        <p className={`rating ${classHighlightText}`}>1 Star</p>
                         <div className="user">
-                            <img src={placeholder} />
-                            <p className={classHighlightText}>John Wick</p>
+                            <img src={mahatmagandhi} />
+                            <p className={classHighlightText}>Gandhi</p>
                         </div>
-                        <p className="review">"Lorem ipsum dolor sit amet."</p>
+                        <p className="review">"Who are these fools in the restaurant. All I wanted was some aloo paratha!"</p>
                     </article>
                 </div>
             </section>
             <section className="about" id="about">
                 <div className="description">
                     <h2 className={classSectionTitle}>Little Lemon</h2>
-                    <p>Chicago</p>
-                    <p>Little Lemon is not just a restaurant; it is a culinary destination that captures the essence of
-                        Mediterranean cuisine with a contemporary touch. As a cherished family-owned establishment, we take
-                        pride in our heritage and the authentic flavors we bring to every plate.</p>
+                    <p className={classSectionCategories}>Chicago</p>
+                    <p className={classLeadText}>Mario and Adrian, childhood friends with a shared passion for food, founded Little Lemon Restaurant.
+                        Mario's heritage-inspired recipes merge seamlessly with Adrian's global culinary expertise. Together,
+                        they craft unforgettable dishes that blend tradition and innovation, creating an extraordinary dining experience for all.</p>
                 </div>
-                <img src={placeholder} />
+                <img src={founders} />
+
             </section>
         </section>
     );
