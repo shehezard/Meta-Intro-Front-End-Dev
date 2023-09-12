@@ -9,7 +9,12 @@ import chefplate from '../assets/images/restauranfood.jpg';
 import shakshuka from '../assets/images/shakshuka.jpeg';
 import greengoddess from '../assets/images/greengoddess.jpeg';
 import falafel from '../assets/images/falafelbowls.jpeg';
+
 import courier from '../assets/images/delivery-courier.png';
+
+import johnwick from '../assets/images/john-wick.jpg'
+import simoncowell from '../assets/images/simon-cowell.jpg'
+import iandooley from '../assets/images/ian-dooley.jpg'
 
 import "./HomePage.css";
 
@@ -78,34 +83,34 @@ const HomePage = () => {
                 <h1 className={classSectionTitle}>Testimonials</h1>
                 <div className="cards">
                     <article className="card">
-                        <p className="rating">5 Stars</p>
+                        <p className={`rating ${classHighlightText}`}>5 Stars</p>
                         <div className="user">
-                            <img src={placeholder} />
-                            <p>John Wick</p>
+                            <img src={johnwick} />
+                            <p className={classHighlightText}>John Wick</p>
                         </div>
-                        <p className="review">"Lorem ipsum dolor sit amet."</p>
+                        <p className="review">"Tell them all. Whoever comes, Whoever it is, I'll eat them. I'll eat them all. Five stars."</p>
                     </article>
                     <article className="card">
-                        <p className="rating">5 Stars</p>
+                        <p className={`rating ${classHighlightText}`}>2 Stars</p>
                         <div className="user">
-                            <img src={placeholder} />
-                            <p>John Wick</p>
+                            <img src={simoncowell} />
+                            <p className={classHighlightText}>Simon Cowell</p>
                         </div>
-                        <p className="review">"Lorem ipsum dolor sit amet."</p>
+                        <p className="review">"There was no live music. I cannot eat without live music!"</p>
                     </article>
                     <article className="card">
-                        <p className="rating">5 Stars</p>
+                        <p className={`rating ${classHighlightText}`}>5 Stars</p>
                         <div className="user">
-                            <img src={placeholder} />
-                            <p>John Wick</p>
+                            <img src={iandooley} />
+                            <p className={classHighlightText}>Ian Dooley</p>
                         </div>
-                        <p className="review">"Lorem ipsum dolor sit amet."</p>
+                        <p className="review">"I just went for lunch and walked in on John Wick and Simon Cowell. Amazing experience."</p>
                     </article>
                     <article className="card">
-                        <p className="rating">5 Stars</p>
+                        <p className={`rating ${classHighlightText}`}>5 Stars</p>
                         <div className="user">
                             <img src={placeholder} />
-                            <p>John Wick</p>
+                            <p className={classHighlightText}>John Wick</p>
                         </div>
                         <p className="review">"Lorem ipsum dolor sit amet."</p>
                     </article>

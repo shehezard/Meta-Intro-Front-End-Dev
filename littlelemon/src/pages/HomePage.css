@@ -72,6 +72,7 @@
     width: 20rem;
     margin: 0.9rem;
     border: 2px solid var(--primary-color1);
+    background-color: var(--secondary-color3);
     border-radius: 1rem;
     transition: all 0.5s ease;
     scale: 1;
@@ -123,7 +124,8 @@
 
 .testimonials .card {
     margin: 1rem;
-    border: 2px solid cadetblue;
+    border: 2px solid var(--primary-color1);
+    background-color: var(--secondary-color3);
     border-radius: 1rem;
     transition: all 0.5s ease;
     scale: 1;
@@ -132,6 +134,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    width: 18rem;
+    height: 18rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .testimonials img {
@@ -140,14 +145,19 @@
     border-radius: 100%;
 }
 
+.testimonials .rating {
+    color: var(--secondary-color1);
+}
+
 .testimonials .user {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.testimonials .rating {
-    /* font-weight: bold; */
+.testimonials .review {
+    text-align: center;
+    font-style: italic;
 }
 
 .testimonials .user>* {
