@@ -9,6 +9,7 @@ import chefplate from '../assets/images/restauranfood.jpg';
 import shakshuka from '../assets/images/shakshuka.jpeg';
 import greengoddess from '../assets/images/greengoddess.jpeg';
 import falafel from '../assets/images/falafelbowls.jpeg';
+import courier from '../assets/images/delivery-courier.png';
 
 import "./HomePage.css";
 
@@ -48,28 +49,28 @@ const HomePage = () => {
                             <p className={classLeadText}>A classic North African dish hailing from Tunisia, shakshuka is simple sunny side up eggs
                                 braised in a chunky tomato sauce with bell peppers and onions.</p>
                         </div>
-                        <a href="#" className={classSectionCategories}>Order a delivery</a>
+                        <a href="#" className={classSectionCategories}>Order a delivery <img src={courier} alt="Delivery courier" /></a>
                     </article>
                     <article className="card">
                         <img src={greengoddess} alt="Green Goddess Chicken Thighs" />
                         <div className="description">
                             <h3 className={classCardTitle}>Lemon Garlic Cod</h3>
-                            <p className={`price ${classSectionCategories}`}>$5.99</p>
+                            <p className={`price ${classHighlightText}`}>$5.99</p>
                             <p className={classLeadText}>This baked fish recipe has been a fan favorite for a long time! It's ready in just over 15
                                 minutes and it's all about the garlic and lemon sauce. Made in a skillet, the secret is in the
                                 white fish fillet.</p>
                         </div>
-                        <a href="#" className={classSectionCategories}>Order a delivery</a>
+                        <a href="#" className={classSectionCategories}>Order a delivery <img src={courier} alt="Delivery courier" /></a>
                     </article>
                     <article className="card">
                         <img src={falafel} alt="Falafel Bowls" />
                         <div className="description">
                             <h3 className={classCardTitle}>Falafel Bowls</h3>
-                            <p className={`price ${classSectionCategories}`}>$5.00</p>
+                            <p className={`price ${classHighlightText}`}>$5.00</p>
                             <p className={classLeadText}>The perfect Mediterranean twist, made the traditional way. With your favorite hummus dip and a
                                 salad. And to jazz it up even more, some pickles and olives too!</p>
                         </div>
-                        <a href="#" className={classSectionCategories}>Order a delivery</a>
+                        <a href="#" className={classSectionCategories}>Order a delivery <img src={courier} alt="Delivery courier" /></a>
                     </article>
                 </div>
             </section>

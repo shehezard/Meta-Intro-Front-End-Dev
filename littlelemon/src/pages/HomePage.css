@@ -70,7 +70,7 @@
 
 .higlights .card {
     width: 20rem;
-    margin: 1rem;
+    margin: 0.9rem;
     border: 2px solid var(--primary-color1);
     border-radius: 1rem;
     transition: all 0.5s ease;
@@ -93,7 +93,7 @@
 .card .description .price {
     color: var(--secondary-color1);
     position: absolute;
-    top: 0rem;
+    top: 0.5rem;
     right: 0rem;
     margin: 0rem 1rem 0rem 0rem;
 }
@@ -103,6 +103,11 @@
     bottom: 1rem;
     left: 1rem;
     color: black;
+}
+
+.card > a > img {
+    width: 2rem;
+    margin: 0px 0px -9px 5px;
 }
 
 .higlights button {
