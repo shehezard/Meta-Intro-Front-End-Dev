@@ -1,5 +1,11 @@
+import { useStyleContext } from "../context/StyleContext";
+
 const ErrorMessage = (props) => {
-    return props.message ? <p className="FieldError">{props.message}</p> : null;
+    const {
+        classParagraphText,
+    } = useStyleContext();
+
+    return props.message ? <p className={`FieldError ${classParagraphText}`}>{props.message}</p> : null;
 };
 
 export default ErrorMessage;

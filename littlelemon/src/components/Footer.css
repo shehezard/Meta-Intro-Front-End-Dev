@@ -1,4 +1,5 @@
 footer {
+    border-radius: 2rem 2rem 0rem 0rem;
     margin-top: 2rem;
     align-items: center;
     display: flex;
@@ -22,6 +23,10 @@ footer {
 .footer-links {
     display: flex;
     flex-wrap: wrap;
+}
+
+.footer-links a {
+    transition: all 0.3s ease;
 }
 
 .footer-links a:hover {

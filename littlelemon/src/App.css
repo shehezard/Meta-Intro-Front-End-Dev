@@ -12,6 +12,12 @@
    --secondary-color4: #333333;
  }
 
+ /* Tertiary Colors */
+ :root {
+   --tertiary-color1: #AE1B33;
+   --tertiary-color2: #D11A2A;
+ }
+
  /* Typefaces */
  /* Typefaces 1: Markazi Text */
  @font-face {
@@ -97,25 +103,23 @@
   font-size: 16pt;
 }
 
+.lead-text {
+  font-family: 'Karla';
+  font-size: 16pt;
+}
+
+.paragraph-text {
+  font-family: 'Karla';
+  font-size: 12pt;
+}
 
 
 
 
 
+ 
 
- .lead-text {
-   font-family: 'Karla';
-   font-weight: 500;
-   font-size: 18pt;
- }
-
- .paragraph-text {
-   font-family: 'Karla';
-   font-weight: normal;
-   font-size: 16pt;
-   line-height: 1.5;
-   max-width: 65ch;
- }
+ 
 
  html {
    scroll-behavior: smooth;

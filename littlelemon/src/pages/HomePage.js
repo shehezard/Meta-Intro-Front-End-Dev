@@ -29,8 +29,7 @@ const HomePage = () => {
         classHeroText,
         classHighlightText,
         classSectionCategories,
-        classCardTitle,
-        classParagraphText
+        classCardTitle
     } = useStyleContext();
 
     return (
@@ -57,7 +56,7 @@ const HomePage = () => {
                             <p className={classLeadText}>A classic North African dish hailing from Tunisia, shakshuka is simple sunny side up eggs
                                 braised in a chunky tomato sauce with bell peppers and onions.</p>
                         </div>
-                        <a href="#" className={classSectionCategories}>Order a delivery <img src={courier} alt="Delivery courier" /></a>
+                        <a href="#" className={`delivery ${classSectionCategories}`}>Order a delivery <img src={courier} alt="Delivery courier" /></a>
                     </article>
                     <article className="card">
                         <img src={greengoddess} alt="Green Goddess Chicken Thighs" />
@@ -68,7 +67,7 @@ const HomePage = () => {
                                 minutes and it's all about the garlic and lemon sauce. Made in a skillet, the secret is in the
                                 white fish fillet.</p>
                         </div>
-                        <a href="#" className={classSectionCategories}>Order a delivery <img src={courier} alt="Delivery courier" /></a>
+                        <a href="#" className={`delivery ${classSectionCategories}`}>Order a delivery <img src={courier} alt="Delivery courier" /></a>
                     </article>
                     <article className="card">
                         <img src={falafel} alt="Falafel Bowls" />
@@ -78,7 +77,7 @@ const HomePage = () => {
                             <p className={classLeadText}>The perfect Mediterranean twist, made the traditional way. With your favorite hummus dip and a
                                 salad. And to jazz it up even more, some pickles and olives too!</p>
                         </div>
-                        <a href="#" className={classSectionCategories}>Order a delivery <img src={courier} alt="Delivery courier" /></a>
+                        <a href="#" className={`delivery ${classSectionCategories}`}>Order a delivery <img src={courier} alt="Delivery courier" /></a>
                     </article>
                 </div>
             </section>

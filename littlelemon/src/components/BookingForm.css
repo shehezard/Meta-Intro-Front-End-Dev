@@ -20,48 +20,55 @@
 }
 
 .booking-content {
-  padding: 20px;
-  border-radius: 8px;
+  padding: 1.5rem;
+  border-radius: 1rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
   transform: scale(0.9);
   transition: transform 0.3s ease-in-out;
+  background-color: var(--secondary-color1);
 }
 
 .booking-content.active {
   transform: scale(1);
 }
 
-button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  align-items: center;
+.booking-content h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.submit-button {
+  margin-left: 1rem;
+  margin-right: 1.5rem;
 }
 
 .cancel-button {
-  margin-top: 10px;
-  cursor: pointer;
+  background-color: var(--secondary-color2);
 }
 
 .cancel-button:hover {
-  background-color: var(--secondary-color1);
+  background-color: var(--tertiary-color2);
+  color: var(--secondary-color3);
 }
 
 .close-button {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 100%;
   position: absolute;
-  background-color: var(--secondary-color1);
-  top: 0;
-  right: 0;
+  top: -1rem;
+  right: -1rem;
   cursor: pointer;
+  background-color: var(--tertiary-color1);
+  color: var(--secondary-color3);
+  transition: all 0.5s ease;
 }
 
 .close-button:hover {
-  background-color: var(--secondary-color1);
+  background-color: var(--tertiary-color2);
+  color: var(--secondary-color3);
+  transition: all 0.5s ease;
 }
 
 .BookingForm {
@@ -75,9 +82,10 @@ button {
 fieldset {
   display: flex;
   width: 480px;
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--primary-color1);
+  border-radius: 1rem;
   flex-direction: column;
 }
 
@@ -92,11 +100,10 @@ sup {
   vertical-align: baseline;
 }
 
-input,
-select {
-  border-radius: 4px;
+input, select {
   border: 1px solid #ccc;
-  height: 32px;
+  height: 2rem;
+  border-radius: 0.5rem;
   padding: 0 8px;
 }
 
@@ -109,7 +116,9 @@ select {
 
 .FieldError {
   position: absolute;
-  bottom: -6px;
+  bottom: -0.7rem;
+  color: var(--tertiary-color2);
+  font-weight: bold;
 }
 
 .Row {

@@ -100,6 +100,15 @@
     margin: 0rem 1rem 0rem 0rem;
 }
 
+.card .delivery {
+    transition: all 0.5s ease;
+}
+
+.card .delivery:hover {
+    color: var(--primary-color1);
+    transition: all 0.5s ease;
+}
+
 .card>a {
     position: absolute;
     bottom: 1rem;
