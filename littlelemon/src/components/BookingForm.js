@@ -10,15 +10,15 @@ import './BookingForm.css';
 const BookingForm = () => {
   const { showBookingForm, closeBookingForm } = useBookingFormContext();
   const {
-      classSectionTitle,
-      classLeadText,
-      classHeroText,
-      classHighlightText,
-      classParagraphText,
-      classSectionCategories,
-      classCardTitle
+    classSectionTitle,
+    classLeadText,
+    classHeroText,
+    classHighlightText,
+    classParagraphText,
+    classSectionCategories,
+    classCardTitle
   } = useStyleContext();
-  
+
   const [formState, setFormState] = useState({
     firstName: { value: "", isTouched: false },
     lastName: "",
@@ -95,9 +95,10 @@ const BookingForm = () => {
         <h2 className={classSectionCategories}>Reserve a Table</h2>
         <form onSubmit={handleSubmit}>
           <fieldset>
+
             <div className="Field">
               <label className={classLeadText} htmlFor="firstName">
-                First name <sup>*</sup>
+                Name <sup>*</sup>
               </label>
               <input className={classParagraphText} id="firstName" type="text" placeholder="First name" value={formState.firstName.value}
                 onChange={(e) => {
@@ -112,56 +113,49 @@ const BookingForm = () => {
               />
               <ErrorMessage message={formState.firstName.isTouched && !formState.firstName.value ? "First name is required" : null} />
             </div>
+
             <div className="Field">
-              <label className={classLeadText} htmlFor="lastName">Last name</label>
-              <input className={classParagraphText} id="lastName" type="text" placeholder="Last name" value={formState.lastName}
-                onChange={(e) => {
-                  setFormState({
-                    ...formState,
-                    lastName: e.target.value,
-                  });
-                }}
-              />
-            </div>
-            <div className="Field">
-              <label className={classLeadText} htmlFor="email">
-                Email address <sup>*</sup>
+              <label className={classLeadText} htmlFor="contactNumber">
+                Contact Number <sup>*</sup>
               </label>
-              <input className={classParagraphText} id="email" type="email" placeholder="Email address" value={formState.email.value}
+              <input className={classParagraphText} id="contactNumber" type="text" placeholder="1-XXX-XXX-XXXX" value={formState.firstName.value}
                 onChange={(e) => {
                   setFormState({
                     ...formState,
-                    email: {
+                    firstName: {
                       value: e.target.value,
                       isTouched: true,
                     }
                   });
                 }}
               />
-              <ErrorMessage message={formState.email.isTouched && !validateEmail(formState.email.value) ? "Email address is invalid" : null} />
+              <ErrorMessage message={formState.firstName.isTouched && !formState.firstName.value ? "First name is required" : null} />
             </div>
+
+
             <div className="Field">
-              <label className={classLeadText} htmlFor="password">
-                Password <sup>*</sup>
+              <label className={classLeadText} htmlFor="res-date">
+                Date <sup>*</sup>
               </label>
-              <input className={classParagraphText} id="password" type="password" placeholder="Password" value={formState.password.value}
+              <input className={classParagraphText} id="res-date" type="date" value={formState.firstName.value}
                 onChange={(e) => {
                   setFormState({
                     ...formState,
-                    password: {
+                    firstName: {
                       value: e.target.value,
                       isTouched: true,
                     }
                   });
                 }}
               />
-              <ErrorMessage message={formState.password.isTouched && formState.password.value.length < 8 ? "Password must be at least 8 characters" : null} />
+              <ErrorMessage message={formState.firstName.isTouched && !formState.firstName.value ? "First name is required" : null} />
             </div>
+
             <div className="Field">
-              <label className={classLeadText}>
-                Role <sup>*</sup>
+              <label className={classLeadText} htmlFor="res-time">
+                Time
               </label>
-              <select className={classParagraphText} value={formState.role.value}
+              <select className={classParagraphText} id="res-time" value={formState.role.value}
                 onChange={(e) => {
                   setFormState({
                     ...formState,
@@ -172,12 +166,56 @@ const BookingForm = () => {
                   });
                 }}
               >
-                <option value="role">Role</option>
-                <option value="individual">Individual</option>
-                <option value="business">Business</option>
+                <option>5:00 PM</option>
+                <option>6:00 PM</option>
+                <option>7:00 PM</option>
+                <option>8:00 PM</option>
+                <option>9:00 PM</option>
+                <option>10:00 PM</option>
               </select>
               <ErrorMessage message={formState.role.isTouched && formState.role.value === "role" ? "Role is required" : null} />
             </div>
+
+            <div className="Field">
+              <label className={classLeadText} htmlFor="guests">
+                Number of Guests <sup>*</sup>
+              </label>
+              <input className={classParagraphText} id="guests" type="number" placeholder="1" min="1" max="10" value={formState.firstName.value}
+                onChange={(e) => {
+                  setFormState({
+                    ...formState,
+                    firstName: {
+                      value: e.target.value,
+                      isTouched: true,
+                    }
+                  });
+                }}
+              />
+              <ErrorMessage message={formState.firstName.isTouched && !formState.firstName.value ? "First name is required" : null} />
+            </div>
+
+            <div className="Field">
+              <label className={classLeadText} htmlFor="occasion">
+                Occasion
+              </label>
+              <select className={classParagraphText} id="occasion" value={formState.role.value}
+                onChange={(e) => {
+                  setFormState({
+                    ...formState,
+                    role: {
+                      value: e.target.value,
+                      isTouched: true,
+                    }
+                  });
+                }}
+              >
+                <option>Causal</option>
+                <option>Formal</option>
+                <option>Party</option>
+              </select>
+              <ErrorMessage message={formState.role.isTouched && formState.role.value === "role" ? "Role is required" : null} />
+            </div>
+
           </fieldset>
           <button className="submit-button" type="submit">Submit</button>
           <button className="cancel-button" onClick={handleCancel}>Cancel</button>
