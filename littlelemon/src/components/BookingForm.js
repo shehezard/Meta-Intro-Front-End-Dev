@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useBookingFormContext } from '../context/BookingFormContext';
 import { useStyleContext } from "../context/StyleContext";
+
+import { fetchTimes, submitAPI } from "../database/API";
+
 import { dateToday, validatePhone, validateDate } from "../utils";
 
 import ErrorMessage from './ErrorMessage';
@@ -8,6 +11,8 @@ import ErrorMessage from './ErrorMessage';
 import './BookingForm.css';
 
 const BookingForm = () => {
+  const [bookingData, setBookingData] = useState();
+
   const { showBookingForm, closeBookingForm } = useBookingFormContext();
   const {
     classLeadText,
@@ -21,13 +26,20 @@ const BookingForm = () => {
     date: { value: dateToday(), isTouched: false },
     time: { value: "5:00 PM", isTouched: false },
     guests: { value: 1, isTouched: false },
-    occasion: { value: "Causal", isTouched: false },
+    occasion: { value: "Casual", isTouched: false },
   });
+
+  const [bookingTimes, setBookingTimes] = useState([]);
+  const [formValid, setFormValid] = useState(false);
 
   const getIsFormValid = () => {
     const { firstName, contact, date, guests } = formState;
 
-    return firstName.value && validatePhone(contact.value) && validateDate(date.value) && (guests.value >= 1 && guests.value <= 10);
+    let isValid = firstName.value !== "" && validatePhone(contact.value) && validateDate(date.value) && (guests.value >= 1 && guests.value <= 10);
+
+    setFormValid(isValid);
+
+    return isValid;
   };
 
   const clearForm = () => {
@@ -37,7 +49,7 @@ const BookingForm = () => {
       date: { value: dateToday(), isTouched: false },
       time: { value: "5:00 PM", isTouched: false },
       guests: { value: 1, isTouched: false },
-      occasion: { value: "Causal", isTouched: false },
+      occasion: { value: "Casual", isTouched: false },
     });
   };
 
@@ -71,11 +83,7 @@ const BookingForm = () => {
       },
     };
 
-    if (getIsFormValid()) {
-      // Submit to API
-      clearForm();
-      closeBookingForm();
-    } else {
+    if (!getIsFormValid()) {
       setFormState(newFormState);
     }
   };
@@ -90,10 +98,35 @@ const BookingForm = () => {
   useEffect(() => {
     if (showBookingForm) {
       document.body.style.overflowY = "hidden";
+
+      fetch('https://6505c2d4ef808d3c66f06d56.mockapi.io/api/bookingdata/bookingdata')
+        .then(response => response.json())
+        .then(data => setBookingData(data))
+
     } else {
       document.body.style.overflowY = "auto";
     }
+
   }, [showBookingForm]);
+
+  useEffect(() => {
+    const getTimes = async () => {
+      const times = fetchTimes(bookingData, formState.date.value);
+      setBookingTimes(times);
+    };
+
+    getTimes();
+  }, [formState.date.value]);
+
+  useEffect(() => {
+    if (formValid) {
+      submitAPI(bookingData, formState);
+
+      clearForm();
+      closeBookingForm();
+    }
+
+  }, [formValid]);
 
   return (
     <div className={`booking-container ${showBookingForm ? 'active' : ''}`}>
@@ -104,7 +137,7 @@ const BookingForm = () => {
 
             <div className="Field">
               <label className={classLeadText} htmlFor="firstName">
-                Name <sup>*</sup>
+                Name
               </label>
               <input className={classParagraphText} id="firstName" type="text" placeholder="First name" value={formState.firstName.value}
                 onChange={(e) => {
@@ -122,7 +155,7 @@ const BookingForm = () => {
 
             <div className="Field">
               <label className={classLeadText} htmlFor="contactNumber">
-                Contact Number <sup>*</sup>
+                Contact Number
               </label>
               <input className={classParagraphText} id="contactNumber" type="text" placeholder="XXX-XXX-XXXX" value={formState.contact.value}
                 onChange={(e) => {
@@ -144,7 +177,7 @@ const BookingForm = () => {
 
             <div className="Field">
               <label className={classLeadText} htmlFor="res-date">
-                Date <sup>*</sup>
+                Date
               </label>
               <input className={classParagraphText} id="res-date" type="date" value={formState.date.value}
                 onChange={(e) => {
@@ -175,18 +208,15 @@ const BookingForm = () => {
                   });
                 }}
               >
-                <option>5:00 PM</option>
-                <option>6:00 PM</option>
-                <option>7:00 PM</option>
-                <option>8:00 PM</option>
-                <option>9:00 PM</option>
-                <option>10:00 PM</option>
+                {bookingTimes.map((time) => (
+                  <option key={time.id}>{time.time}</option>
+                ))}
               </select>
             </div>
 
             <div className="Field">
               <label className={classLeadText} htmlFor="guests">
-                Number of Guests <sup>*</sup>
+                Number of Guests
               </label>
               <input className={classParagraphText} id="guests" type="number" value={formState.guests.value}
                 onChange={(e) => {
@@ -217,7 +247,7 @@ const BookingForm = () => {
                   });
                 }}
               >
-                <option>Causal</option>
+                <option>Casual</option>
                 <option>Formal</option>
                 <option>Party</option>
               </select>

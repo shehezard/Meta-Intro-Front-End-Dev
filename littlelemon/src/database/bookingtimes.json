@@ -1,0 +1,34 @@
+{
+    "times": [
+        {
+            "id": 1,
+            "time": "5:00 PM",
+            "isAvailable": true
+        },
+        {
+            "id": 2,
+            "time": "6:00 PM",
+            "isAvailable": true
+        },
+        {
+            "id": 3,
+            "time": "7:00 PM",
+            "isAvailable": true
+        },
+        {
+            "id": 4,
+            "time": "8:00 PM",
+            "isAvailable": true
+        },
+        {
+            "id": 5,
+            "time": "9:00 PM",
+            "isAvailable": true
+        },
+        {
+            "id": 6,
+            "time": "10:00 PM",
+            "isAvailable": true
+        }
+    ]
+}

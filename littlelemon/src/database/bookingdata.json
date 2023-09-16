@@ -1,0 +1,94 @@
+  {
+      "bookings": [
+        {
+          "id": 1,
+          "firstName": "John",
+          "contact": "123-456-7890",
+          "date": "2023-09-16",
+          "time": "7:00 PM",
+          "guests": 4,
+          "occasion": "Formal"
+        },
+        {
+          "id": 2,
+          "firstName": "Alice",
+          "contact": "987-654-3210",
+          "date": "2023-09-18",
+          "time": "6:00 PM",
+          "guests": 2,
+          "occasion": "Casual"
+        },
+        {
+          "id": 3,
+          "firstName": "Bob",
+          "contact": "555-555-5555",
+          "date": "2023-09-20",
+          "time": "8:00 PM",
+          "guests": 6,
+          "occasion": "Party"
+        },
+        {
+          "id": 4,
+          "firstName": "Emily",
+          "contact": "111-222-3333",
+          "date": "2023-09-22",
+          "time": "7:00 PM",
+          "guests": 3,
+          "occasion": "Casual"
+        },
+        {
+          "id": 5,
+          "firstName": "David",
+          "contact": "444-555-6666",
+          "date": "2023-09-25",
+          "time": "6:00 PM",
+          "guests": 5,
+          "occasion": "Formal"
+        },
+        {
+          "id": 6,
+          "firstName": "Sarah",
+          "contact": "777-888-9999",
+          "date": "2023-09-28",
+          "time": "8:00 PM",
+          "guests": 2,
+          "occasion": "Party"
+        },
+        {
+          "id": 7,
+          "firstName": "Michael",
+          "contact": "555-123-7890",
+          "date": "2023-09-30",
+          "time": "7:00 PM",
+          "guests": 4,
+          "occasion": "Casual"
+        },
+        {
+          "id": 8,
+          "firstName": "Olivia",
+          "contact": "999-888-7777",
+          "date": "2023-10-03",
+          "time": "6:00 PM",
+          "guests": 2,
+          "occasion": "Formal"
+        },
+        {
+          "id": 9,
+          "firstName": "James",
+          "contact": "777-777-5555",
+          "date": "2023-10-05",
+          "time": "8:00 PM",
+          "guests": 6,
+          "occasion": "Party"
+        },
+        {
+          "id": 10,
+          "firstName": "Sophia",
+          "contact": "111-222-3333",
+          "date": "2023-10-07",
+          "time": "7:00 PM",
+          "guests": 3,
+          "occasion": "Casual"
+        }
+      ]
+    }  
