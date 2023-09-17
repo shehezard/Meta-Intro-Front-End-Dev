@@ -1,43 +1,41 @@
 import BookingTimes from './bookingtimes.json';
 
-const fetchTimes = function (bookingData, date) {
-    let availableTimes = BookingTimes;
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, set, onValue, push } from "firebase/database";
 
-    if (bookingData) {
-        if (bookingData.length > 0) {
-            const reservedTimes = bookingData
-                .filter((booking) => booking.date === date)
-                .map((booking) => booking.time);
-
-            return availableTimes.times.filter(times => !reservedTimes.includes(times.time));
-        }
-    }
-
-    return availableTimes.times;
+const firebaseConfig = {
+    apiKey: "AIzaSyBApfy8owoCAnhx5uTvwhPGsH320a3vNGw",
+    authDomain: "littlelemonapimsr.firebaseapp.com",
+    databaseURL: "https://littlelemonapimsr-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "littlelemonapimsr",
+    storageBucket: "littlelemonapimsr.appspot.com",
+    messagingSenderId: "423048192060",
+    appId: "1:423048192060:web:6eeda35d48488e7deee339",
+    measurementId: "G-C8T4W1YX5J"
 };
 
-const submitAPI = function (bookingData, formData) {
+const firebaseApp = initializeApp(firebaseConfig);
 
-    const appendData = (data) => {
-        const updatedData = data;
+const fetchTimes = function (date, res) {
+    const database = getDatabase(firebaseApp);
+    const reference = ref(database, 'bookings');
 
-        fetch('https://6505c2d4ef808d3c66f06d56.mockapi.io/api/bookingdata/bookingdata', {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            // Send your data in the request body as JSON
-            body: JSON.stringify(updatedData)
-        }).then(res => {
-            if (!res.ok) {
-                console.error('Failed to update data');
-            }
-            // handle error
-        }).catch(error => {
-            console.error('Error updating data:', error);
-        })
-    };
+    onValue(reference, (snapshot) => {
+        const bookingData = snapshot.val();
+
+        let availableTimes = BookingTimes;
+
+        const reservedTimes = Object.values(bookingData)
+            .filter((booking) => booking.date === date)
+            .map((booking) => booking.time);
+
+        res(availableTimes.times.filter(times => !reservedTimes.includes(times.time)));
+    });
+};
+
+const submitAPI = function (formData) {
 
     const newBooking = {
-        "id": bookingData.length + 1,
         "firstName": formData.firstName.value,
         "contact": formData.contact.value,
         "date": formData.date.value,
@@ -46,11 +44,10 @@ const submitAPI = function (bookingData, formData) {
         "occasion": formData.occasion.value
     }
 
-    bookingData.push(newBooking);
+    const database = getDatabase(firebaseApp);
+    const reference = ref(database, 'bookings');
+    push(reference, newBooking);
 
-    appendData(bookingData);
-
-    return true;
 };
 
 export { fetchTimes, submitAPI };

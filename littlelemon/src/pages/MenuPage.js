@@ -7,12 +7,9 @@ import './MenuPage.css';
 const MenuPage = () => {
     const {
         classSectionTitle,
-        classLeadText,
         classHeroText,
         classHighlightText,
-        classSectionCategories,
         classCardTitle,
-        classParagraphText
     } = useStyleContext();
 
     return (

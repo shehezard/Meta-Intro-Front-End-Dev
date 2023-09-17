@@ -11,8 +11,6 @@ import ErrorMessage from './ErrorMessage';
 import './BookingForm.css';
 
 const BookingForm = () => {
-  const [bookingData, setBookingData] = useState();
-
   const { showBookingForm, closeBookingForm } = useBookingFormContext();
   const {
     classLeadText,
@@ -98,11 +96,6 @@ const BookingForm = () => {
   useEffect(() => {
     if (showBookingForm) {
       document.body.style.overflowY = "hidden";
-
-      fetch('https://6505c2d4ef808d3c66f06d56.mockapi.io/api/bookingdata/bookingdata')
-        .then(response => response.json())
-        .then(data => setBookingData(data))
-
     } else {
       document.body.style.overflowY = "auto";
     }
@@ -110,17 +103,15 @@ const BookingForm = () => {
   }, [showBookingForm]);
 
   useEffect(() => {
-    const getTimes = async () => {
-      const times = fetchTimes(bookingData, formState.date.value);
+    fetchTimes(formState.date.value, (times) => {
       setBookingTimes(times);
-    };
+    });
 
-    getTimes();
   }, [formState.date.value]);
 
   useEffect(() => {
     if (formValid) {
-      submitAPI(bookingData, formState);
+      submitAPI(formState);
 
       clearForm();
       closeBookingForm();
