@@ -55,11 +55,6 @@
   font-size: 2rem;
 }
 
-
-
-
-
-
  .display-title {
    font-family: 'Markazi Text';
    font-weight: 500;
@@ -71,18 +66,6 @@
    font-weight: normal;
    font-size: 40pt;
  }
-
-
-
-
-
-
-
-
-
-
-
-
  
  /* Karla */
  .header-button {
@@ -113,16 +96,9 @@
   font-size: 12pt;
 }
 
-
-
-
-
- 
-
- 
-
- html {
+html {
    scroll-behavior: smooth;
+   user-select: none;
  }
 
  body {
@@ -186,3 +162,35 @@
   color: var(--primary-color2);
   transition: all 0.3s ease;
  }
+
+.Toastify__close-button {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  background-color: var(--primary-color2);
+  color: var(--secondary-color4);
+  opacity: unset;
+}
+
+.Toastify__close-button > svg {
+  height: 15px;
+  width: 20px;
+}
+
+.Toastify__toast-icon > svg {
+  fill: var(--primary-color2);
+}
+
+.Toastify__progress-bar--success {
+  background: var(--primary-color2);
+}
+
+.Toastify__toast-theme--dark {
+  background: var(--primary-color1);
+  color: var(--secondary-color3);
+  border: 1px solid var(--primary-color2);
+}
+
+.Toastify__toast-container--top-center {
+  top: 100px;
+}

@@ -1,7 +1,7 @@
 import BookingTimes from './bookingtimes.json';
 
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, onValue, push } from "firebase/database";
+import { getDatabase, ref, onValue, push } from "firebase/database";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBApfy8owoCAnhx5uTvwhPGsH320a3vNGw",

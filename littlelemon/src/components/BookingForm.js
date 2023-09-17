@@ -9,7 +9,6 @@ import { dateToday, validatePhone, validateDate } from "../utils";
 import ErrorMessage from './ErrorMessage';
 
 import './BookingForm.css';
-import { initializeApp } from 'firebase/app';
 
 const BookingForm = () => {
   const {
@@ -51,7 +50,7 @@ const BookingForm = () => {
   const getIsFormValid = () => {
     const { firstName, contact, date, time, guests } = formState;
 
-    let isValid = firstName.value !== "" && validatePhone(contact.value) && validateDate(date.value) && formState.time.value !== "No available time slots" && (guests.value >= 1 && guests.value <= 10);
+    let isValid = firstName.value !== "" && validatePhone(contact.value) && validateDate(date.value) && time.value !== "No available time slots" && (guests.value >= 1 && guests.value <= 10);
 
     setFormValid(isValid);
 

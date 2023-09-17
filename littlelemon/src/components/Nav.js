@@ -3,7 +3,23 @@ import { Link } from 'react-router-dom';
 import { useBookingFormContext } from "../context/BookingFormContext";
 import { useStyleContext } from "../context/StyleContext";
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Nav = ({className}) => {
+    const showComingSoon = () => {
+        toast.success('Coming Soon!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
+    };
+
     const { toggleBookingForm } = useBookingFormContext();
     const { classHeaderButton, classHighlightText } = useStyleContext();
 
@@ -47,8 +63,8 @@ const Nav = ({className}) => {
                     <Link to="/" refto="about" onClick={HandleClick}><li className={navClass}>About</li></Link>
                     <Link to="/menu"><li className={navClass}>Menu</li></Link>
                     <a href="#book" onClick={toggleBookingForm}><li className={navClass}>Reservations</li></a>
-                    <a href="#orderonline"><li className={navClass}>Order Online</li></a>
-                    <a href="#login"><li className={navClass}>Login</li></a>
+                    <a href="#orderonline" onClick={showComingSoon}><li className={navClass}>Order Online</li></a>
+                    <a href="#login" onClick={showComingSoon}><li className={navClass}>Login</li></a>
                 </ul>
             </nav>
         </div>
