@@ -9,14 +9,35 @@ import { dateToday, validatePhone, validateDate } from "../utils";
 import ErrorMessage from './ErrorMessage';
 
 import './BookingForm.css';
+import { initializeApp } from 'firebase/app';
 
 const BookingForm = () => {
-  const { showBookingForm, closeBookingForm } = useBookingFormContext();
+  const {
+    showBookingForm,
+    closeBookingForm,
+    showBookingConfirmation
+  } = useBookingFormContext();
   const {
     classLeadText,
     classParagraphText,
     classSectionCategories,
   } = useStyleContext();
+
+  const [bookingTimes, setBookingTimes] = useState([]);
+  const [formValid, setFormValid] = useState(false);
+
+  const initializeBookingTime = (times) => {
+    if (times === false) {
+      if (bookingTimes.length > 0) {
+        return bookingTimes[0].time;
+      }
+    } else {
+      if (times.length > 0) {
+        return times[0].time;
+      }
+    }
+    return "No available time slots";
+  };
 
   const [formState, setFormState] = useState({
     firstName: { value: "", isTouched: false },
@@ -27,13 +48,10 @@ const BookingForm = () => {
     occasion: { value: "Casual", isTouched: false },
   });
 
-  const [bookingTimes, setBookingTimes] = useState([]);
-  const [formValid, setFormValid] = useState(false);
-
   const getIsFormValid = () => {
-    const { firstName, contact, date, guests } = formState;
+    const { firstName, contact, date, time, guests } = formState;
 
-    let isValid = firstName.value !== "" && validatePhone(contact.value) && validateDate(date.value) && (guests.value >= 1 && guests.value <= 10);
+    let isValid = firstName.value !== "" && validatePhone(contact.value) && validateDate(date.value) && formState.time.value !== "No available time slots" && (guests.value >= 1 && guests.value <= 10);
 
     setFormValid(isValid);
 
@@ -89,6 +107,7 @@ const BookingForm = () => {
   const handleCancel = (event) => {
     event.preventDefault();
 
+    setFormValid(false);
     clearForm();
     closeBookingForm();
   };
@@ -96,6 +115,14 @@ const BookingForm = () => {
   useEffect(() => {
     if (showBookingForm) {
       document.body.style.overflowY = "hidden";
+
+      setFormState({
+        ...formState,
+        time: {
+          value: initializeBookingTime(false),
+          isTouched: false,
+        }
+      });
     } else {
       document.body.style.overflowY = "auto";
     }
@@ -105,6 +132,15 @@ const BookingForm = () => {
   useEffect(() => {
     fetchTimes(formState.date.value, (times) => {
       setBookingTimes(times);
+
+      setFormState({
+        ...formState,
+        time: {
+          value: initializeBookingTime(times),
+          isTouched: false,
+        }
+      });
+
     });
 
   }, [formState.date.value]);
@@ -113,8 +149,11 @@ const BookingForm = () => {
     if (formValid) {
       submitAPI(formState);
 
+      setFormValid(false);
       clearForm();
       closeBookingForm();
+
+      showBookingConfirmation();
     }
 
   }, [formValid]);
@@ -203,6 +242,7 @@ const BookingForm = () => {
                   <option key={time.id}>{time.time}</option>
                 ))}
               </select>
+              <ErrorMessage message={formState.time.value === "No available time slots" ? "No available time slots" : null} />
             </div>
 
             <div className="Field">

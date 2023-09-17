@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { BookingFormProvider } from './context/BookingFormContext';
 import { StyleProvider } from './context/StyleContext';
@@ -8,6 +8,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 
 import BookingForm from './components/BookingForm';
+import { ToastContainer } from 'react-toastify';
 
 import './App.css';
 
@@ -20,6 +21,7 @@ function App() {
           <Main />
           <Footer />
           <BookingForm />
+          <ToastContainer />
         </div>
       </BookingFormProvider>
     </StyleProvider>

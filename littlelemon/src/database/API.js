@@ -23,13 +23,22 @@ const fetchTimes = function (date, res) {
     onValue(reference, (snapshot) => {
         const bookingData = snapshot.val();
 
-        let availableTimes = BookingTimes;
+        if (bookingData) {
+            let availableTimes = BookingTimes;
 
-        const reservedTimes = Object.values(bookingData)
-            .filter((booking) => booking.date === date)
-            .map((booking) => booking.time);
+            const reservedTimes = Object.values(bookingData)
+                .filter((booking) => {
+                    return booking.date === date;
+                })
+                .map((booking) => {
+                    return booking.time;
+                });
 
-        res(availableTimes.times.filter(times => !reservedTimes.includes(times.time)));
+            res(availableTimes.times.filter(times => !reservedTimes.includes(times.time)));
+        } else {
+            res(BookingTimes.times);
+        }
+
     });
 };
 
