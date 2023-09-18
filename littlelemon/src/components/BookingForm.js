@@ -160,8 +160,8 @@ const BookingForm = () => {
   return (
     <div className={`booking-container ${showBookingForm ? 'active' : ''}`}>
       <div className="booking-content">
-        <h2 className={classSectionCategories}>Reserve a Table</h2>
-        <form onSubmit={handleSubmit}>
+        <h2 id="booking-form-title" className={classSectionCategories}>Reserve a Table</h2>
+        <form onSubmit={handleSubmit} aria-labelledby="booking-form-title" role="form">
           <fieldset>
 
             <div className="Field">
@@ -178,8 +178,10 @@ const BookingForm = () => {
                     }
                   });
                 }}
+                aria-invalid={formState.firstName.isTouched && !formState.firstName.value}
+                aria-describedby="firstName-error"
               />
-              <ErrorMessage message={formState.firstName.isTouched && !formState.firstName.value ? "First name is required" : null} />
+              <ErrorMessage id="firstName-error" message={formState.firstName.isTouched && !formState.firstName.value ? "First name is required" : null} />
             </div>
 
             <div className="Field">
@@ -200,8 +202,10 @@ const BookingForm = () => {
                     });
                   }
                 }}
+                aria-invalid={formState.contact.isTouched && !validatePhone(formState.contact.value)}
+                aria-describedby="contactNumber-error"
               />
-              <ErrorMessage message={formState.contact.isTouched && !validatePhone(formState.contact.value) ? "Contact number is invalid" : null} />
+              <ErrorMessage id="contactNumber-error" message={formState.contact.isTouched && !validatePhone(formState.contact.value) ? "Contact number is invalid" : null} />
             </div>
 
             <div className="Field">
@@ -218,8 +222,10 @@ const BookingForm = () => {
                     }
                   });
                 }}
+                aria-invalid={formState.date.isTouched && !validateDate(formState.date.value)}
+                aria-describedby="date-error"
               />
-              <ErrorMessage message={formState.date.isTouched && !validateDate(formState.date.value) ? "Date is invalid" : null} />
+              <ErrorMessage id="date-error"  message={formState.date.isTouched && !validateDate(formState.date.value) ? "Date is invalid" : null} />
             </div>
 
             <div className="Field">
@@ -236,12 +242,14 @@ const BookingForm = () => {
                     }
                   });
                 }}
+                aria-invalid={formState.time.value === "No available time slots"}
+                aria-describedby="time-error"
               >
                 {bookingTimes.map((time) => (
                   <option key={time.id}>{time.time}</option>
                 ))}
               </select>
-              <ErrorMessage message={formState.time.value === "No available time slots" ? "No available time slots" : null} />
+              <ErrorMessage id="time-error" message={formState.time.value === "No available time slots" ? "No available time slots" : null} />
             </div>
 
             <div className="Field">
@@ -258,8 +266,10 @@ const BookingForm = () => {
                     }
                   });
                 }}
+                aria-invalid={formState.guests.isTouched && !(formState.guests.value >= 1 && formState.guests.value <= 10)}
+                aria-describedby="guests-error"
               />
-              <ErrorMessage message={formState.guests.isTouched && !(formState.guests.value >= 1 && formState.guests.value <= 10) ? "Enter number of guests between 1 & 10" : null} />
+              <ErrorMessage id="guests-error" message={formState.guests.isTouched && !(formState.guests.value >= 1 && formState.guests.value <= 10) ? "Enter number of guests between 1 & 10" : null} />
             </div>
 
             <div className="Field">
@@ -284,9 +294,9 @@ const BookingForm = () => {
             </div>
 
           </fieldset>
-          <button className="submit-button" type="submit">Submit</button>
-          <button className="cancel-button" onClick={handleCancel}>Cancel</button>
-          <button className="close-button" onClick={handleCancel}>x</button>
+          <button className="submit-button" type="submit" aria-label="Submit">Submit</button>
+          <button className="cancel-button" onClick={handleCancel} aria-label="Cancel">Cancel</button>
+          <button className="close-button" onClick={handleCancel} aria-label="Close">x</button>
         </form>
 
       </div>

@@ -6,7 +6,7 @@ import { useStyleContext } from "../context/StyleContext";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Nav = ({className}) => {
+const Nav = ({ className }) => {
     const showComingSoon = () => {
         toast.success('Coming Soon!', {
             position: "top-center",
@@ -17,7 +17,7 @@ const Nav = ({className}) => {
             draggable: true,
             progress: undefined,
             theme: "dark",
-            });
+        });
     };
 
     const { toggleBookingForm } = useBookingFormContext();
@@ -59,12 +59,12 @@ const Nav = ({className}) => {
         <div key={className} className={className}>
             <nav>
                 <ul>
-                    <Link to="/" onClick={HandleClick}><li className={navClass}>Home</li></Link>
-                    <Link to="/" refto="about" onClick={HandleClick}><li className={navClass}>About</li></Link>
-                    <Link to="/menu"><li className={navClass}>Menu</li></Link>
-                    <a href="#book" onClick={toggleBookingForm}><li className={navClass}>Reservations</li></a>
-                    <a href="#orderonline" onClick={showComingSoon}><li className={navClass}>Order Online</li></a>
-                    <a href="#login" onClick={showComingSoon}><li className={navClass}>Login</li></a>
+                    <Link to="/" onClick={HandleClick} aria-label="Home"><li className={navClass}>Home</li></Link>
+                    <Link to="/" refto="about" onClick={HandleClick} aria-label="About"><li className={navClass}>About</li></Link>
+                    <Link to="/menu"><li className={navClass} aria-label="Menu">Menu</li></Link>
+                    <a href="#book" onClick={toggleBookingForm} aria-label="Reservations"><li className={navClass}>Reservations</li></a>
+                    <a href="#orderonline" onClick={showComingSoon} aria-label="Order Online"><li className={navClass}>Order Online</li></a>
+                    <a href="#login" onClick={showComingSoon} aria-label="Login"><li className={navClass}>Login</li></a>
                 </ul>
             </nav>
         </div>

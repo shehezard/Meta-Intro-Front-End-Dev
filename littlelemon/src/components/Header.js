@@ -33,6 +33,7 @@ const Header = () => {
 
   return (
     <header className="header"
+      role="banner"
       ref={headerRef}
       style={{
         transition: "transform 400ms ease-in-out",
@@ -44,7 +45,7 @@ const Header = () => {
         zIndex: 10
       }}
     >
-      <Link onClick={HandleClick}><img src={logoheader} alt="Header Logo" /></Link>
+      <Link onClick={HandleClick} aria-label="Go to top"><img src={logoheader} alt="Header Logo" /></Link>
       <Nav className="navheader" />
     </header>
   );

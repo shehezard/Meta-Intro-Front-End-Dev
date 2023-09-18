@@ -19,9 +19,9 @@ const Footer = () => {
     };
 
     return (
-        <footer className="footer">
+        <footer className="footer" role="contentinfo">
             <section className="footer-logo">
-                <Link onClick={HandleClick}><img src={logofooter} alt="Footer Logo" /></Link>
+                <Link onClick={HandleClick} aria-label="Go to top"><img src={logofooter} alt="Footer Logo" /></Link>
             </section>
             <div className="footer-links">
                 <section className="doormat-links">
@@ -38,9 +38,9 @@ const Footer = () => {
                 <section className="social-media">
                     <h2 className={classSectionCategories}>Social Media Links</h2>
                     <ul>
-                        <a href="#"><li className={classHighlightText}>Facebook</li></a>
-                        <a href="#"><li className={classHighlightText}>Instagram</li></a>
-                        <a href="#"><li className={classHighlightText}>Twitter</li></a>
+                        <a href="#" aria-label="Visit our Facebook page"><li className={classHighlightText}>Facebook</li></a>
+                        <a href="#" aria-label="Visit our Instagram page"><li className={classHighlightText}>Instagram</li></a>
+                        <a href="#" aria-label="Visit our Twitter page"><li className={classHighlightText}>Twitter</li></a>
                     </ul>
                 </section>
             </div>

@@ -6,10 +6,10 @@ import MenuPage from '../pages/MenuPage';
 
 const Main = () => {
     return (
-        <main className="main">
+        <main className="main" role="main">
             <Routes>
-                <Route path="/" element={<HomePage />}></Route>
-                <Route path="/menu" element={<MenuPage />}></Route>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/menu" element={<MenuPage />} />
             </Routes>
         </main>
     );
