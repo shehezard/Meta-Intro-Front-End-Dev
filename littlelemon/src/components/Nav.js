@@ -3,23 +3,9 @@ import { Link } from 'react-router-dom';
 import { useBookingFormContext } from "../context/BookingFormContext";
 import { useStyleContext } from "../context/StyleContext";
 
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { showNotification } from "../utils";
 
 const Nav = ({ className }) => {
-    const showComingSoon = () => {
-        toast.success('Coming Soon!', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-        });
-    };
-
     const { toggleBookingForm } = useBookingFormContext();
     const { classHeaderButton, classHighlightText } = useStyleContext();
 
@@ -29,6 +15,10 @@ const Nav = ({ className }) => {
     const HandleClick = (e) => {
         setLink(e.currentTarget.getAttribute("refto"));
         setUseEffectTriggered(false);
+    };
+
+    const showComingSoon = (e) => {
+        showNotification("Coming Soon!");
     };
 
     const navClass = className === "navheader" ? classHeaderButton : classHighlightText;
@@ -62,9 +52,9 @@ const Nav = ({ className }) => {
                     <Link to="/" onClick={HandleClick} aria-label="Home"><li className={navClass}>Home</li></Link>
                     <Link to="/" refto="about" onClick={HandleClick} aria-label="About"><li className={navClass}>About</li></Link>
                     <Link to="/menu"><li className={navClass} aria-label="Menu">Menu</li></Link>
-                    <a href="#book" onClick={toggleBookingForm} aria-label="Reservations"><li className={navClass}>Reservations</li></a>
-                    <a href="#orderonline" onClick={showComingSoon} aria-label="Order Online"><li className={navClass}>Order Online</li></a>
-                    <a href="#login" onClick={showComingSoon} aria-label="Login"><li className={navClass}>Login</li></a>
+                    <Link onClick={toggleBookingForm} aria-label="Reservations"><li className={navClass}>Reservations</li></Link>
+                    <Link onClick={showComingSoon} aria-label="Order Online"><li className={navClass}>Order Online</li></Link>
+                    <Link onClick={showComingSoon} aria-label="Login"><li className={navClass}>Login</li></Link>
                 </ul>
             </nav>
         </div>

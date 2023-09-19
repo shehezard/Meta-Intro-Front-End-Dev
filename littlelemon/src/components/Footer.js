@@ -1,6 +1,8 @@
 import { useStyleContext } from "../context/StyleContext";
 import { Link } from 'react-router-dom';
 
+import { showNotification } from "../utils";
+
 import Nav from './Nav';
 
 import logofooter from '../assets/logofooter.png';
@@ -8,14 +10,17 @@ import logofooter from '../assets/logofooter.png';
 import "./Footer.css";
 
 const Footer = () => {
-    const { 
+    const {
         classSectionCategories,
-        classSectionTitle, 
-        classHighlightText 
+        classHighlightText
     } = useStyleContext();
 
     const HandleClick = () => {
         window.scrollTo({ top: 0 });
+    };
+
+    const showComingSoon = (e) => {
+        showNotification("Coming Soon!");
     };
 
     return (
@@ -38,9 +43,9 @@ const Footer = () => {
                 <section className="social-media">
                     <h2 className={classSectionCategories}>Social Media Links</h2>
                     <ul>
-                        <a href="#" aria-label="Visit our Facebook page"><li className={classHighlightText}>Facebook</li></a>
-                        <a href="#" aria-label="Visit our Instagram page"><li className={classHighlightText}>Instagram</li></a>
-                        <a href="#" aria-label="Visit our Twitter page"><li className={classHighlightText}>Twitter</li></a>
+                        <Link onClick={showComingSoon} aria-label="Visit our Facebook page"><li className={classHighlightText}>Facebook</li></Link>
+                        <Link onClick={showComingSoon} aria-label="Visit our Instagram page"><li className={classHighlightText}>Instagram</li></Link>
+                        <Link onClick={showComingSoon} aria-label="Visit our Twitter page"><li className={classHighlightText}>Twitter</li></Link>
                     </ul>
                 </section>
             </div>

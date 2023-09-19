@@ -1,22 +1,12 @@
 import React, { createContext, useContext, useState } from "react";
 
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { showNotification } from "../utils";
 
 const BookingFormContext = createContext();
 
 export const BookingFormProvider = ({ children }) => {
     const showBookingConfirmation = () => {
-        toast.success('Booking Confirmed!', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            });
+        showNotification("Booking Confirmed!");
     };
 
     const [showBookingForm, setShowBookingForm] = useState(false);
