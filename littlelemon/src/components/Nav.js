@@ -3,25 +3,43 @@ import { Link } from 'react-router-dom';
 import { useBookingFormContext } from "../context/BookingFormContext";
 import { useStyleContext } from "../context/StyleContext";
 
+import hamburger from '../assets/hamburger.png';
+
 import { showNotification } from "../utils";
 
-const Nav = ({ className }) => {
+const Nav = (props) => {
     const { toggleBookingForm } = useBookingFormContext();
     const { classHeaderButton, classHighlightText } = useStyleContext();
 
     const [link, setLink] = useState(null);
     const [useEffectTriggered, setUseEffectTriggered] = useState(false);
 
+    const [isOpen, setIsOpen] = useState(false);
+
     const HandleClick = (e) => {
+        ToggleMenu();
+  
         setLink(e.currentTarget.getAttribute("refto"));
         setUseEffectTriggered(false);
     };
 
+    const ToggleMenu = () => {
+        setIsOpen((prev) => !prev);
+    };
+
     const showComingSoon = (e) => {
+        ToggleMenu();
+
         showNotification("Coming Soon!");
     };
 
-    const navClass = className === "navheader" ? classHeaderButton : classHighlightText;
+    const showBookingForm = (e) => {
+        ToggleMenu();
+
+        toggleBookingForm(e);
+    };
+
+    const navClass = props.className === "navheader" ? classHeaderButton : classHighlightText;
 
     useEffect(() => {
         if (useEffectTriggered)
@@ -45,20 +63,36 @@ const Nav = ({ className }) => {
         return () => clearTimeout(timeout);
     });
 
-    return (
-        <div key={className} className={className}>
-            <nav>
-                <ul>
-                    <Link to="/" onClick={HandleClick} aria-label="Home"><li className={navClass}>Home</li></Link>
-                    <Link to="/" refto="about" onClick={HandleClick} aria-label="About"><li className={navClass}>About</li></Link>
-                    <Link to="/menu"><li className={navClass} aria-label="Menu">Menu</li></Link>
-                    <Link onClick={toggleBookingForm} aria-label="Reservations"><li className={navClass}>Reservations</li></Link>
-                    <Link onClick={showComingSoon} aria-label="Order Online"><li className={navClass}>Order Online</li></Link>
-                    <Link onClick={showComingSoon} aria-label="Login"><li className={navClass}>Login</li></Link>
-                </ul>
-            </nav>
-        </div>
-    );
+    return props.isMobile === true ?
+        (
+            <div key={props.className} className={props.className}>
+                <Link onClick={ToggleMenu} aria-label="Menu Toggle" className="hamburger"><img src={hamburger} alt="Menu Toggle" /></Link>
+                <nav className={isOpen ? 'active' : ''}>
+                    <ul>
+                        <Link to="/" onClick={HandleClick} aria-label="Home"><li className={navClass}>Home</li></Link>
+                        <Link to="/" refto="about" onClick={HandleClick} aria-label="About"><li className={navClass}>About</li></Link>
+                        <Link to="/menu" onClick={ToggleMenu}><li className={navClass} aria-label="Menu">Menu</li></Link>
+                        <Link onClick={showBookingForm} aria-label="Reservations"><li className={navClass}>Reservations</li></Link>
+                        <Link onClick={showComingSoon} aria-label="Order Online"><li className={navClass}>Order Online</li></Link>
+                        <Link onClick={showComingSoon} aria-label="Login"><li className={navClass}>Login</li></Link>
+                    </ul>
+                </nav>
+            </div>
+        ) :
+        (
+            <div key={props.className} className={props.className}>
+                <nav className="">
+                    <ul>
+                        <Link to="/" onClick={HandleClick} aria-label="Home"><li className={navClass}>Home</li></Link>
+                        <Link to="/" refto="about" onClick={HandleClick} aria-label="About"><li className={navClass}>About</li></Link>
+                        <Link to="/menu"><li className={navClass} aria-label="Menu">Menu</li></Link>
+                        <Link onClick={toggleBookingForm} aria-label="Reservations"><li className={navClass}>Reservations</li></Link>
+                        <Link onClick={showComingSoon} aria-label="Order Online"><li className={navClass}>Order Online</li></Link>
+                        <Link onClick={showComingSoon} aria-label="Login"><li className={navClass}>Login</li></Link>
+                    </ul>
+                </nav>
+            </div>
+        );
 };
 
 export default Nav;

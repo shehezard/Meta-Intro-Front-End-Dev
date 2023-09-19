@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from 'react-router-dom';
 
 import Nav from '../components/Nav';
@@ -8,6 +8,8 @@ import logoheader from '../assets/logoheader.png';
 import "./Header.css";
 
 const Header = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
   const headerRef = useRef(null);
   const prevScrollY = useRef(0);
 
@@ -31,6 +33,17 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+
+  }, []);
+
   return (
     <header className="header"
       role="banner"
@@ -45,8 +58,8 @@ const Header = () => {
         zIndex: 10
       }}
     >
-      <Link onClick={HandleClick} aria-label="Go to top"><img src={logoheader} alt="Header Logo" /></Link>
-      <Nav className="navheader" />
+      <Link onClick={HandleClick} aria-label="Go to top" className="logo"><img src={logoheader} alt="Header Logo" /></Link>
+      <Nav className="navheader" isMobile={isMobile} />
     </header>
   );
 };
