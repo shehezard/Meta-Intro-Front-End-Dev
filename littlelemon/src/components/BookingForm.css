@@ -140,3 +140,9 @@ button[disabled] {
   border: 1px solid #999999;
   cursor: not-allowed;
 }
+
+@media screen and (max-width: 768px) {
+  .booking-content {
+    transform: scale(0.6);
+  }
+}

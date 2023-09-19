@@ -23,7 +23,7 @@ header {
 .hamburger>img {
     padding: 1rem;
     height: 2rem;
-    right: 3rem;
+    right: 0;
     top: 1rem;
     position: absolute;
 }

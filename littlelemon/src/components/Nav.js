@@ -18,7 +18,7 @@ const Nav = (props) => {
 
     const HandleClick = (e) => {
         ToggleMenu();
-  
+
         setLink(e.currentTarget.getAttribute("refto"));
         setUseEffectTriggered(false);
     };
@@ -71,7 +71,7 @@ const Nav = (props) => {
                     <ul>
                         <Link to="/" onClick={HandleClick} aria-label="Home"><li className={navClass}>Home</li></Link>
                         <Link to="/" refto="about" onClick={HandleClick} aria-label="About"><li className={navClass}>About</li></Link>
-                        <Link to="/menu" onClick={ToggleMenu}><li className={navClass} aria-label="Menu">Menu</li></Link>
+                        <Link to="/menu" onClick={HandleClick}><li className={navClass} aria-label="Menu">Menu</li></Link>
                         <Link onClick={showBookingForm} aria-label="Reservations"><li className={navClass}>Reservations</li></Link>
                         <Link onClick={showComingSoon} aria-label="Order Online"><li className={navClass}>Order Online</li></Link>
                         <Link onClick={showComingSoon} aria-label="Login"><li className={navClass}>Login</li></Link>
@@ -85,8 +85,8 @@ const Nav = (props) => {
                     <ul>
                         <Link to="/" onClick={HandleClick} aria-label="Home"><li className={navClass}>Home</li></Link>
                         <Link to="/" refto="about" onClick={HandleClick} aria-label="About"><li className={navClass}>About</li></Link>
-                        <Link to="/menu"><li className={navClass} aria-label="Menu">Menu</li></Link>
-                        <Link onClick={toggleBookingForm} aria-label="Reservations"><li className={navClass}>Reservations</li></Link>
+                        <Link to="/menu" onClick={HandleClick}><li className={navClass} aria-label="Menu">Menu</li></Link>
+                        <Link onClick={showBookingForm} aria-label="Reservations"><li className={navClass}>Reservations</li></Link>
                         <Link onClick={showComingSoon} aria-label="Order Online"><li className={navClass}>Order Online</li></Link>
                         <Link onClick={showComingSoon} aria-label="Login"><li className={navClass}>Login</li></Link>
                     </ul>

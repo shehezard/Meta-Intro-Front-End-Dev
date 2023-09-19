@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useBookingFormContext } from "../context/BookingFormContext";
 import { useStyleContext } from "../context/StyleContext";
 
-import placeholder from '../assets/placeholder.png';
 import chefplate from '../assets/images/restauranfood.jpg';
 import shakshuka from '../assets/images/shakshuka.jpeg';
 import greengoddess from '../assets/images/greengoddess.jpeg';
@@ -32,6 +31,10 @@ const HomePage = () => {
         classCardTitle
     } = useStyleContext();
 
+    const HandleClick = (e) => {
+        window.scrollTo({ top: 0 });
+    };
+
     return (
         <section>
             <section className="hero">
@@ -46,7 +49,7 @@ const HomePage = () => {
 
             <section className="higlights">
                 <h1 className={classSectionTitle}>This weeks specials!</h1>
-                <Link to="/menu"><button>Online Menu</button></Link>
+                <Link to="/menu" onClick={HandleClick}><button>Online Menu</button></Link>
                 <div className="cards">
                     <article className="card">
                         <img src={shakshuka} alt="Shakshuka" />
