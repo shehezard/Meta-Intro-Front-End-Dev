@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useBookingFormContext } from '../context/BookingFormContext';
 import { useStyleContext } from "../context/StyleContext";
 
@@ -25,7 +25,7 @@ const BookingForm = () => {
   const [bookingTimes, setBookingTimes] = useState([]);
   const [formValid, setFormValid] = useState(false);
 
-  const initializeBookingTime = (times) => {
+  const initializeBookingTime = useCallback((times) => {
     if (times === false) {
       if (bookingTimes.length > 0) {
         return bookingTimes[0].time;
@@ -36,7 +36,7 @@ const BookingForm = () => {
       }
     }
     return "No available time slots";
-  };
+  }, [bookingTimes]);
 
   const [formState, setFormState] = useState({
     firstName: { value: "", isTouched: false },
@@ -115,34 +115,34 @@ const BookingForm = () => {
     if (showBookingForm) {
       document.body.style.overflowY = "hidden";
 
-      setFormState({
-        ...formState,
+      setFormState(f => ({
+        ...f,
         time: {
           value: initializeBookingTime(false),
           isTouched: false,
         }
-      });
+      }));
     } else {
       document.body.style.overflowY = "auto";
     }
 
-  }, [showBookingForm]);
+  }, [showBookingForm, initializeBookingTime]);
 
   useEffect(() => {
     fetchTimes(formState.date.value, (times) => {
       setBookingTimes(times);
 
-      setFormState({
-        ...formState,
+      setFormState(f => ({
+        ...f,
         time: {
           value: initializeBookingTime(times),
           isTouched: false,
         }
-      });
+      }));
 
     });
 
-  }, [formState.date.value]);
+  }, [formState.date.value, initializeBookingTime]);
 
   useEffect(() => {
     if (formValid) {
@@ -155,13 +155,13 @@ const BookingForm = () => {
       showBookingConfirmation();
     }
 
-  }, [formValid]);
+  }, [formValid, closeBookingForm, showBookingConfirmation, formState]);
 
   return (
     <div className={`booking-container ${showBookingForm ? 'active' : ''}`}>
       <div className="booking-content">
         <h2 id="booking-form-title" className={classSectionCategories}>Reserve a Table</h2>
-        <form onSubmit={handleSubmit} aria-labelledby="booking-form-title" role="form">
+        <form onSubmit={handleSubmit} aria-labelledby="booking-form-title">
           <fieldset>
 
             <div className="Field">
@@ -225,7 +225,7 @@ const BookingForm = () => {
                 aria-invalid={formState.date.isTouched && !validateDate(formState.date.value)}
                 aria-describedby="date-error"
               />
-              <ErrorMessage id="date-error"  message={formState.date.isTouched && !validateDate(formState.date.value) ? "Date is invalid" : null} />
+              <ErrorMessage id="date-error" message={formState.date.isTouched && !validateDate(formState.date.value) ? "Date is invalid" : null} />
             </div>
 
             <div className="Field">

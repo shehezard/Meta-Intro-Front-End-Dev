@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 import { useBookingFormContext } from "../context/BookingFormContext";
 import { useStyleContext } from "../context/StyleContext";
@@ -59,7 +60,7 @@ const HomePage = () => {
                             <p className={classLeadText}>A classic North African dish hailing from Tunisia, shakshuka is simple sunny side up eggs
                                 braised in a chunky tomato sauce with bell peppers and onions.</p>
                         </div>
-                        <a href="#" className={`delivery ${classSectionCategories}`}>Order a delivery <img src={courier} alt="Delivery courier" /></a>
+                        <HashLink smooth to="#" className={`delivery ${classSectionCategories}`}>Order a delivery <img src={courier} alt="Delivery courier" /></HashLink>
                     </article>
                     <article className="card">
                         <img src={greengoddess} alt="Green Goddess Chicken Thighs" />
@@ -70,7 +71,7 @@ const HomePage = () => {
                                 minutes and it's all about the garlic and lemon sauce. Made in a skillet, the secret is in the
                                 white fish fillet.</p>
                         </div>
-                        <a href="#" className={`delivery ${classSectionCategories}`}>Order a delivery <img src={courier} alt="Delivery courier" /></a>
+                        <HashLink smooth to="#" className={`delivery ${classSectionCategories}`}>Order a delivery <img src={courier} alt="Delivery courier" /></HashLink>
                     </article>
                     <article className="card">
                         <img src={falafel} alt="Falafel Bowls" />
@@ -80,7 +81,7 @@ const HomePage = () => {
                             <p className={classLeadText}>The perfect Mediterranean twist, made the traditional way. With your favorite hummus dip and a
                                 salad. And to jazz it up even more, some pickles and olives too!</p>
                         </div>
-                        <a href="#" className={`delivery ${classSectionCategories}`}>Order a delivery <img src={courier} alt="Delivery courier" /></a>
+                        <HashLink smooth to="#" className={`delivery ${classSectionCategories}`}>Order a delivery <img src={courier} alt="Delivery courier" /></HashLink>
                     </article>
                 </div>
             </section>
@@ -90,7 +91,7 @@ const HomePage = () => {
                     <article className="card">
                         <p className={`rating ${classHighlightText}`}>5 Stars</p>
                         <div className="user">
-                            <img src={johnwick} />
+                            <img src={johnwick} alt='John Wick' />
                             <p className={classHighlightText}>John Wick</p>
                         </div>
                         <p className="review">"Yeah."</p>
@@ -98,7 +99,7 @@ const HomePage = () => {
                     <article className="card">
                         <p className={`rating ${classHighlightText}`}>2 Stars</p>
                         <div className="user">
-                            <img src={simoncowell} />
+                            <img src={simoncowell} alt='Simon Cowell' />
                             <p className={classHighlightText}>Simon Cowell</p>
                         </div>
                         <p className="review">"There was no live music. I cannot eat without live music!"</p>
@@ -106,7 +107,7 @@ const HomePage = () => {
                     <article className="card">
                         <p className={`rating ${classHighlightText}`}>5 Stars</p>
                         <div className="user">
-                            <img src={iandooley} />
+                            <img src={iandooley} alt='Ian Dooley' />
                             <p className={classHighlightText}>Ian Dooley</p>
                         </div>
                         <p className="review">"I just went for lunch and walked in on John Wick and Simon Cowell. Amazing experience."</p>
@@ -114,7 +115,7 @@ const HomePage = () => {
                     <article className="card">
                         <p className={`rating ${classHighlightText}`}>1 Star</p>
                         <div className="user">
-                            <img src={mahatmagandhi} />
+                            <img src={mahatmagandhi} alt='Maha G' />
                             <p className={classHighlightText}>Gandhi</p>
                         </div>
                         <p className="review">"Who are these fools in the restaurant. All I wanted was some aloo paratha!"</p>
@@ -129,7 +130,7 @@ const HomePage = () => {
                         Mario's heritage-inspired recipes merge seamlessly with Adrian's global culinary expertise. Together,
                         they craft unforgettable dishes that blend tradition and innovation, creating an extraordinary dining experience for all.</p>
                 </div>
-                <img src={founders} />
+                <img src={founders} alt='Founders' />
 
             </section>
         </section>
