@@ -1,2 +1,4 @@
 # Meta-Intro-Front-End-Dev
-Coursera Course - Introduction to Front-End Development
+Meta Front-End Developer Professional Certificate on Coursera
+
+https://www.coursera.org/account/accomplishments/professional-cert/WKDKHYH4QGBF
